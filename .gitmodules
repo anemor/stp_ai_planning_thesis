@@ -1,3 +1,0 @@
-[submodule "stp/temporal-planning"]
-	path = stp/temporal-planning
-	url = https://github.com/aig-upf/temporal-planning.git
