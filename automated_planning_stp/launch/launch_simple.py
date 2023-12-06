@@ -13,7 +13,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
   # Get the launch directory
-  package_name = "automated_planning"
+  package_name = "automated_planning_stp"
   directory = get_package_share_directory(package_name)
   namespace = LaunchConfiguration('namespace')
 
