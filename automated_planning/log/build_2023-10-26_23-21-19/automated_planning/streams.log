@@ -1,0 +1,37 @@
+[0.197s] Invoking command in '/home/ane/colcon_ws/src/automated_planning/build/automated_planning': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/ane/colcon_ws/src/automated_planning -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ane/colcon_ws/src/automated_planning/install/automated_planning
+[0.228s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.259s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.564s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.582s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.656s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.665s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.889s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.960s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.962s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.308s] -- Found rclcpp_lifecycle: 2.4.3 (/opt/ros/foxy/share/rclcpp_lifecycle/cmake)
+[1.420s] -- Found rclcpp_action: 2.4.3 (/opt/ros/foxy/share/rclcpp_action/cmake)
+[1.556s] -- Found plansys2_msgs: 1.0.10 (/opt/ros/foxy/share/plansys2_msgs/cmake)
+[1.722s] -- Found plansys2_executor: 1.0.10 (/opt/ros/foxy/share/plansys2_executor/cmake)
+[4.015s] -- Found geometry_msgs: 2.0.5 (/opt/ros/foxy/share/geometry_msgs/cmake)
+[4.061s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[4.154s] CMake Error at CMakeLists.txt:26 (find_package):
+[4.154s]   By not providing "Findanafi_uav_interfaces.cmake" in CMAKE_MODULE_PATH this
+[4.154s]   project has asked CMake to find a package configuration file provided by
+[4.154s]   "anafi_uav_interfaces", but CMake did not find one.
+[4.154s] 
+[4.154s]   Could not find a package configuration file provided by
+[4.154s]   "anafi_uav_interfaces" with any of the following names:
+[4.154s] 
+[4.154s]     anafi_uav_interfacesConfig.cmake
+[4.154s]     anafi_uav_interfaces-config.cmake
+[4.155s] 
+[4.155s]   Add the installation prefix of "anafi_uav_interfaces" to CMAKE_PREFIX_PATH
+[4.155s]   or set "anafi_uav_interfaces_DIR" to a directory containing one of the
+[4.155s]   above files.  If "anafi_uav_interfaces" provides a separate development
+[4.155s]   package or SDK, be sure it has been installed.
+[4.155s] 
+[4.156s] 
+[4.158s] -- Configuring incomplete, errors occurred!
+[4.158s] See also "/home/ane/colcon_ws/src/automated_planning/build/automated_planning/CMakeFiles/CMakeOutput.log".
+[4.158s] See also "/home/ane/colcon_ws/src/automated_planning/build/automated_planning/CMakeFiles/CMakeError.log".
+[4.175s] Invoked command in '/home/ane/colcon_ws/src/automated_planning/build/automated_planning' returned '1': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/ane/colcon_ws/src/automated_planning -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ane/colcon_ws/src/automated_planning/install/automated_planning

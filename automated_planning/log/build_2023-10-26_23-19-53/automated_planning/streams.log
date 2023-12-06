@@ -1,0 +1,36 @@
+[0.170s] Invoking command in '/home/ane/colcon_ws/src/automated_planning/build/automated_planning': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/ane/colcon_ws/src/automated_planning -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ane/colcon_ws/src/automated_planning/install/automated_planning
+[0.201s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.231s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.446s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.463s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.520s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.526s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.715s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.770s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.772s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.922s] -- Found rclcpp_lifecycle: 2.4.3 (/opt/ros/foxy/share/rclcpp_lifecycle/cmake)
+[0.958s] -- Found rclcpp_action: 2.4.3 (/opt/ros/foxy/share/rclcpp_action/cmake)
+[1.037s] -- Found plansys2_msgs: 1.0.10 (/opt/ros/foxy/share/plansys2_msgs/cmake)
+[1.146s] -- Found plansys2_executor: 1.0.10 (/opt/ros/foxy/share/plansys2_executor/cmake)
+[2.781s] -- Found geometry_msgs: 2.0.5 (/opt/ros/foxy/share/geometry_msgs/cmake)
+[2.910s] CMake Error at CMakeLists.txt:24 (find_package):
+[2.911s]   By not providing "Findnav2_msgs.cmake" in CMAKE_MODULE_PATH this project
+[2.911s]   has asked CMake to find a package configuration file provided by
+[2.911s]   "nav2_msgs", but CMake did not find one.
+[2.911s] 
+[2.911s]   Could not find a package configuration file provided by "nav2_msgs" with
+[2.920s]   any of the following names:
+[2.920s] 
+[2.920s]     nav2_msgsConfig.cmake
+[2.921s]     nav2_msgs-config.cmake
+[2.921s] 
+[2.921s]   Add the installation prefix of "nav2_msgs" to CMAKE_PREFIX_PATH or set
+[2.922s]   "nav2_msgs_DIR" to a directory containing one of the above files.  If
+[2.922s]   "nav2_msgs" provides a separate development package or SDK, be sure it has
+[2.922s]   been installed.
+[2.922s] 
+[2.923s] 
+[2.923s] -- Configuring incomplete, errors occurred!
+[2.924s] See also "/home/ane/colcon_ws/src/automated_planning/build/automated_planning/CMakeFiles/CMakeOutput.log".
+[2.926s] See also "/home/ane/colcon_ws/src/automated_planning/build/automated_planning/CMakeFiles/CMakeError.log".
+[2.927s] Invoked command in '/home/ane/colcon_ws/src/automated_planning/build/automated_planning' returned '1': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/ane/colcon_ws/src/automated_planning -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ane/colcon_ws/src/automated_planning/install/automated_planning

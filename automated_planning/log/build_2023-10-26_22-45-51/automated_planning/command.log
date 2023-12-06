@@ -1,0 +1,2 @@
+Invoking command in '/home/ane/colcon_ws/src/automated_planning/build/automated_planning': /usr/bin/cmake /home/ane/colcon_ws/src/automated_planning -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ane/colcon_ws/src/automated_planning/install/automated_planning
+Invoked command in '/home/ane/colcon_ws/src/automated_planning/build/automated_planning' returned '1': /usr/bin/cmake /home/ane/colcon_ws/src/automated_planning -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ane/colcon_ws/src/automated_planning/install/automated_planning

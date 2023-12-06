@@ -1,0 +1,78 @@
+[2.570s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[2.571s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fb4ff7e0580>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=4, paths=None, symlink_install=True, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fb4ff7e0580>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fb4ff37ed90>)
+[2.685s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.686s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.686s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.686s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.686s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.686s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.686s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ane/colcon_ws/src/automated_planning'
+[2.686s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.687s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.687s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.687s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.687s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.687s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.687s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.687s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.687s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.706s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'automated_planning'
+[2.707s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.707s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.707s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.707s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.707s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.993s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[2.993s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[3.074s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 256 installed packages in /opt/ros/foxy
+[3.076s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[3.289s] Level 5:colcon.colcon_core.verb:set package 'automated_planning' build argument 'cmake_args' from command line to 'None'
+[3.289s] Level 5:colcon.colcon_core.verb:set package 'automated_planning' build argument 'cmake_target' from command line to 'None'
+[3.289s] Level 5:colcon.colcon_core.verb:set package 'automated_planning' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.289s] Level 5:colcon.colcon_core.verb:set package 'automated_planning' build argument 'cmake_clean_cache' from command line to 'False'
+[3.289s] Level 5:colcon.colcon_core.verb:set package 'automated_planning' build argument 'cmake_clean_first' from command line to 'False'
+[3.289s] Level 5:colcon.colcon_core.verb:set package 'automated_planning' build argument 'cmake_force_configure' from command line to 'False'
+[3.289s] Level 5:colcon.colcon_core.verb:set package 'automated_planning' build argument 'ament_cmake_args' from command line to 'None'
+[3.289s] Level 5:colcon.colcon_core.verb:set package 'automated_planning' build argument 'catkin_cmake_args' from command line to 'None'
+[3.289s] Level 5:colcon.colcon_core.verb:set package 'automated_planning' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.289s] DEBUG:colcon.colcon_core.verb:Building package 'automated_planning' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ane/colcon_ws/src/automated_planning/build/automated_planning', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ane/colcon_ws/src/automated_planning/install/automated_planning', 'merge_install': False, 'path': '/home/ane/colcon_ws/src/automated_planning', 'symlink_install': True, 'test_result_base': None}
+[3.324s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[3.360s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[3.360s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ane/colcon_ws/src/automated_planning' with build type 'ament_cmake'
+[3.361s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ane/colcon_ws/src/automated_planning'
+[3.417s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[3.418s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.419s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.563s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ane/colcon_ws/src/automated_planning/build/automated_planning': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/ane/colcon_ws/src/automated_planning -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ane/colcon_ws/src/automated_planning/install/automated_planning
+[5.249s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ane/colcon_ws/src/automated_planning/build/automated_planning' returned '1': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/ane/colcon_ws/src/automated_planning -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ane/colcon_ws/src/automated_planning/install/automated_planning
+[5.275s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(automated_planning)
+[5.313s] Level 1:colcon.colcon_core.environment:checking '/home/ane/colcon_ws/src/automated_planning/install/automated_planning' for CMake module files
+[5.315s] Level 1:colcon.colcon_core.environment:checking '/home/ane/colcon_ws/src/automated_planning/install/automated_planning' for CMake config files
+[5.316s] Level 1:colcon.colcon_core.environment:checking '/home/ane/colcon_ws/src/automated_planning/install/automated_planning/bin'
+[5.317s] Level 1:colcon.colcon_core.environment:checking '/home/ane/colcon_ws/src/automated_planning/install/automated_planning/lib/pkgconfig/automated_planning.pc'
+[5.317s] Level 1:colcon.colcon_core.environment:checking '/home/ane/colcon_ws/src/automated_planning/install/automated_planning/lib/python3.8/site-packages'
+[5.318s] Level 1:colcon.colcon_core.environment:checking '/home/ane/colcon_ws/src/automated_planning/install/automated_planning/bin'
+[5.358s] INFO:colcon.colcon_core.shell:Creating package script '/home/ane/colcon_ws/src/automated_planning/install/automated_planning/share/automated_planning/package.ps1'
+[5.359s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ane/colcon_ws/src/automated_planning/install/automated_planning/share/automated_planning/package.dsv'
+[5.360s] INFO:colcon.colcon_core.shell:Creating package script '/home/ane/colcon_ws/src/automated_planning/install/automated_planning/share/automated_planning/package.sh'
+[5.362s] INFO:colcon.colcon_core.shell:Creating package script '/home/ane/colcon_ws/src/automated_planning/install/automated_planning/share/automated_planning/package.bash'
+[5.366s] INFO:colcon.colcon_core.shell:Creating package script '/home/ane/colcon_ws/src/automated_planning/install/automated_planning/share/automated_planning/package.zsh'
+[5.367s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ane/colcon_ws/src/automated_planning/install/automated_planning/share/colcon-core/packages/automated_planning)
+[5.386s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.387s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.387s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '1'
+[5.388s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.444s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.445s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.445s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.473s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.538s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ane/colcon_ws/src/automated_planning/install/local_setup.ps1'
+[5.540s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ane/colcon_ws/src/automated_planning/install/_local_setup_util_ps1.py'
+[5.545s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ane/colcon_ws/src/automated_planning/install/setup.ps1'
+[5.583s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ane/colcon_ws/src/automated_planning/install/local_setup.sh'
+[5.584s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ane/colcon_ws/src/automated_planning/install/_local_setup_util_sh.py'
+[5.585s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ane/colcon_ws/src/automated_planning/install/setup.sh'
+[5.632s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ane/colcon_ws/src/automated_planning/install/local_setup.bash'
+[5.633s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ane/colcon_ws/src/automated_planning/install/setup.bash'
+[5.671s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ane/colcon_ws/src/automated_planning/install/local_setup.zsh'
+[5.672s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ane/colcon_ws/src/automated_planning/install/setup.zsh'
