@@ -17,10 +17,13 @@ def generate_launch_description():
   directory = get_package_share_directory(package_name)
   namespace = LaunchConfiguration('namespace')
 
+  pddl_file = "sar_simple.pddl"
+
   declare_namespace_cmd = DeclareLaunchArgument(
     'namespace',
     default_value='',
-    description='Namespace')
+    description='Namespace'
+  )
 
   stdout_linebuf_envvar = SetEnvironmentVariable(
     'RCUTILS_CONSOLE_STDOUT_LINE_BUFFERED', '1')
@@ -31,7 +34,7 @@ def generate_launch_description():
       'launch',
       'plansys2_bringup_launch_monolithic.py')),
     launch_arguments={
-      'model_file': directory + '/pddl/move.pddl',
+      'model_file': directory + '/pddl/'+ pddl_file,
       'namespace': namespace
     }.items()
   )
@@ -62,7 +65,7 @@ def generate_launch_description():
     name='land_action_node',
     namespace=namespace,
     output='screen',
-    parameters=[config_file])
+    parameters=[config_file, mission_params_file])
 
   takeoff_cmd = Node(
     package=package_name,
@@ -70,7 +73,16 @@ def generate_launch_description():
     name='takeoff_action_node',
     namespace=namespace,
     output='screen',
-    parameters=[config_file])   
+    parameters=[config_file, mission_params_file])   
+
+  search_cmd = Node(
+    package=package_name,
+    executable='search_action_node',
+    name='search_action_node',
+    namespace=namespace,
+    output='screen',
+    parameters=[config_file, mission_params_file]
+  )
 
   ld = LaunchDescription()
 
@@ -84,5 +96,6 @@ def generate_launch_description():
   ld.add_action(move_cmd)
   ld.add_action(land_cmd)
   ld.add_action(takeoff_cmd)
+  ld.add_action(search_cmd)
 
   return ld

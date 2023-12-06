@@ -3,6 +3,10 @@
 To run the planner on a simple scenario:
 ```
 python2.7 stp/temporal-planning/bin/plan.py stp-4 pddl/domains/sar_simple.pddl pddl/problems/sar_simple_scenario.pddl
+
+cd ~/colcon_ws/stp_ai_planning_thesis/stp
+source bin/activate
+python2.7 temporal-planning/bin/plan.py stp-4 ../pddl/domains/sar_simple.pddl ../pddl/problems/sar_simple_scenario.pddl
 ```
 
 ```
