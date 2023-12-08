@@ -24,7 +24,7 @@
             ?loc_from - location
             ?loc_to - location
         )
-        :duration (= ?duration 30)
+        :duration (= ?duration 20)
         :condition (and 
             (at start (and 
                 (path ?loc_from ?loc_to)
@@ -32,9 +32,9 @@
                 ; (not (landed ?d))
                 (not (searching ?d))
             ))
-            ; (over all (and
-            ;     (not (landed ?d))
-            ; ))
+            (over all (and
+                (not (landed ?d))
+            ))
         )
         :effect (and
             (at start (not ( drone_at ?d ?loc_from )))
@@ -55,6 +55,7 @@
         )
         :effect (and
             (at end (landed ?d))
+            (at end (drone_at ?d ?loc))
         )
     )
     (:durative-action TAKEOFF
@@ -79,15 +80,15 @@
         :duration (= ?duration 20)
         :condition (and 
             (at start (drone_at ?d ?loc))
-            (at start (not (searching ?d)))
+            ; (at start (not (searching ?d)))
             (at start (not (searched ?loc)))
-            (at start (not (landed ?d)))
+            ; (at start (not (landed ?d)))
         )
         :effect (and 
             (at start (searching ?d))
             (at end (not (searching ?d)))
             (at end (searched ?loc))
-            (at end (not (landed ?d)))
+            ; (at end (not (landed ?d)))
         )
     )
 )
