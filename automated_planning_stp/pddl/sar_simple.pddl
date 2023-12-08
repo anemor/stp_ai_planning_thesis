@@ -20,7 +20,7 @@
 
     (:durative-action MOVE
         :parameters ( ?d - drone ?loc_from ?loc_to - location)
-        :duration (= ?duration 5)
+        :duration (= ?duration 30)
         :condition (and 
             (at start (path ?loc_from ?loc_to))
             (at start (drone_at ?d ?loc_from))
@@ -34,7 +34,7 @@
     )
     (:durative-action LAND
         :parameters ( ?d - drone ?loc - location)
-        :duration (= ?duration 5)
+        :duration (= ?duration 10)
         :condition (and 
             (at start (drone_at ?d ?loc))
             (at start (not (landed ?d)))
@@ -58,7 +58,7 @@
     )
     (:durative-action SEARCH
         :parameters (?d - drone ?loc - location)
-        :duration (= ?duration 1)
+        :duration (= ?duration 20)
         :condition (and 
             (at start (drone_at ?d ?loc))
             (at start (not (searching ?d)))
