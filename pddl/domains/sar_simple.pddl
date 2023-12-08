@@ -19,22 +19,34 @@
     )
 
     (:durative-action MOVE
-        :parameters ( ?d - drone ?loc_from ?loc_to - location)
-        :duration (= ?duration 5)
+        :parameters (
+            ?d - drone 
+            ?loc_from - location
+            ?loc_to - location
+        )
+        :duration (= ?duration 30)
         :condition (and 
-            (at start (path ?loc_from ?loc_to))
-            (at start (drone_at ?d ?loc_from))
-            (at start (not (landed ?d)))
-            (at start (not (searching ?d)))
+            (at start (and 
+                (path ?loc_from ?loc_to)
+                (drone_at ?d ?loc_from)
+                ; (not (landed ?d))
+                (not (searching ?d))
+            ))
+            ; (over all (and
+            ;     (not (landed ?d))
+            ; ))
         )
         :effect (and
-            (at start (not (drone_at ?d ?loc_from)))
-            (at end (drone_at ?d ?loc_to))
+            (at start (not ( drone_at ?d ?loc_from )))
+            (at end ( drone_at ?d ?loc_to ))
         )
     )
     (:durative-action LAND
-        :parameters ( ?d - drone ?loc - location)
-        :duration (= ?duration 5)
+        :parameters (
+            ?d - drone 
+            ?loc - location
+        )
+        :duration (= ?duration 30)
         :condition (and 
             (at start (drone_at ?d ?loc))
             (at start (not (landed ?d)))
@@ -46,7 +58,10 @@
         )
     )
     (:durative-action TAKEOFF
-        :parameters ( ?d - drone ?loc - location)
+        :parameters (
+            ?d - drone 
+            ?loc - location
+        )
         :duration (= ?duration 5)
         :condition (and  
             (at start (drone_at ?d ?loc))
@@ -57,8 +72,11 @@
         )
     )
     (:durative-action SEARCH
-        :parameters (?d - drone ?loc - location)
-        :duration (= ?duration 1)
+        :parameters (
+            ?d - drone 
+            ?loc - location
+        )
+        :duration (= ?duration 20)
         :condition (and 
             (at start (drone_at ?d ?loc))
             (at start (not (searching ?d)))
