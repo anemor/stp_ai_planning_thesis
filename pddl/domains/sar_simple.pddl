@@ -12,7 +12,7 @@
         ; (person_at ?p - person ?loc - location)
         (path ?loc_from ?loc_to - location)
         (landed ?d - drone)
-        (searching ?d - drone) ; only needed if another action can happen while searching
+        ; (searching ?d - drone) ; only needed if another action can happen while searching
         
         (searched ?loc - location)
         (can_land ?loc - location)
@@ -27,13 +27,14 @@
         :duration (= ?duration 20)
         :condition (and 
             (at start (and 
-                (path ?loc_from ?loc_to)
                 (drone_at ?d ?loc_from)
+                (path ?loc_from ?loc_to)
                 ; (not (landed ?d))
-                (not (searching ?d))
+                ; (not (searching ?d))
             ))
             (over all (and
                 (not (landed ?d))
+                ; (not (searching ?d))
             ))
         )
         :effect (and
@@ -51,7 +52,7 @@
             (at start (drone_at ?d ?loc))
             (at start (not (landed ?d)))
             (at start (searched ?loc))  ; to specify helipad location from other locations
-            (over all (can_land ?loc))
+            (at start (can_land ?loc))
         )
         :effect (and
             (at end (landed ?d))
@@ -79,14 +80,15 @@
         )
         :duration (= ?duration 20)
         :condition (and 
-            (at start (drone_at ?d ?loc))
+            ; (at start (drone_at ?d ?loc))
+            (over all (drone_at ?d ?loc))
             ; (at start (not (searching ?d)))
             (at start (not (searched ?loc)))
             ; (at start (not (landed ?d)))
         )
         :effect (and 
-            (at start (searching ?d))
-            (at end (not (searching ?d)))
+            ; (at start (searching ?d))
+            ; (at end (not (searching ?d)))
             (at end (searched ?loc))
             ; (at end (not (landed ?d)))
         )
