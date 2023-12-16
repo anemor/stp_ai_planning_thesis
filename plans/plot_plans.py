@@ -1,7 +1,7 @@
 import re
 import matplotlib.pyplot as plt
 
-filename = "sar_simple_stp234_tmp_sas_plan.2"
+filename = "/home/msccomputer/catkin_ws/src/temporal-planning/tmp_sas_plan.2"
 # filename = "sar_simple_2drones.2"
 
 actions = []
@@ -19,7 +19,11 @@ action_colors = {
     'takeoff': 'khaki',
     'move': 'lightseagreen',
     'search': 'coral',
-    'land': 'seagreen'
+    'land': 'seagreen',
+    'communicate': 'lightgreen',
+    'track': 'orangered',
+    'drop_marker': 'g',
+    'drop_lifevest': 'g'
 }
 
 # Plotting
