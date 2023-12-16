@@ -18,24 +18,25 @@
         (can_land ?loc - location)
     )
 
+    (:functions
+        (distance ?loc_from - location ?loc_to - location)
+        (search_distance ?loc - location)
+        
+        (move_velocity ?d - drone)
+        (track_velocity ?d - drone) 
+    )
+
     (:durative-action MOVE
         :parameters (
             ?d - drone 
             ?loc_from - location
             ?loc_to - location
         )
-        :duration (= ?duration 20)
+        :duration (= ?duration (/ (distance ?loc_from ?loc_to)(move_velocity ?d))); (= ?duration 20)
         :condition (and 
-            (at start (and 
-                (drone_at ?d ?loc_from)
-                (path ?loc_from ?loc_to)
-                ; (not (landed ?d))
-                ; (not (searching ?d))
-            ))
-            (over all (and
-                (not (landed ?d))
-                ; (not (searching ?d))
-            ))
+            (at start (drone_at ?d ?loc_from))
+            (at start (path ?loc_from ?loc_to))
+            (over all (not (landed ?d)))
         )
         :effect (and
             (at start (not ( drone_at ?d ?loc_from )))
@@ -45,18 +46,18 @@
     (:durative-action LAND
         :parameters (
             ?d - drone 
-            ?loc - location
+            ?loc - location ; helipad
         )
         :duration (= ?duration 30)
         :condition (and 
-            (at start (drone_at ?d ?loc))
+            (over all (drone_at ?d ?loc)) ; i stedet for at start, fiksa feil med land og 
             (at start (not (landed ?d)))
             (at start (searched ?loc))  ; to specify helipad location from other locations
             (at start (can_land ?loc))
         )
         :effect (and
             (at end (landed ?d))
-            (at end (drone_at ?d ?loc))
+            ; (at end (drone_at ?d ?loc))
         )
     )
     (:durative-action TAKEOFF
@@ -66,7 +67,7 @@
         )
         :duration (= ?duration 5)
         :condition (and  
-            (at start (drone_at ?d ?loc))
+            (over all (drone_at ?d ?loc))
             (at start (landed ?d))
         )
         :effect (and
@@ -78,19 +79,13 @@
             ?d - drone 
             ?loc - location
         )
-        :duration (= ?duration 20)
+        :duration ( = ?duration (/ (search_distance ?loc) (track_velocity ?d))); (= ?duration 20)
         :condition (and 
-            ; (at start (drone_at ?d ?loc))
             (over all (drone_at ?d ?loc))
-            ; (at start (not (searching ?d)))
             (at start (not (searched ?loc)))
-            ; (at start (not (landed ?d)))
         )
         :effect (and 
-            ; (at start (searching ?d))
-            ; (at end (not (searching ?d)))
             (at end (searched ?loc))
-            ; (at end (not (landed ?d)))
         )
     )
 )
