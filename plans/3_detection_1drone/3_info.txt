@@ -1,0 +1,420 @@
+tmp_sas_plan.2
+stp3
+Search time: 0.020s
+Total time: 0.060s
+
+ msccomputer on  ~/catkin_ws/src/temporal-planning master $ python2.7 bin/plan.py stp-3 ~/colcon_ws/src/stp_ai_planning_thesis/pddl/domains/sar_testing_stp.pddl ~/colcon_ws/src/stp_ai_planning_thesis/pddl/problems/3_detection_1drone.pddl 
+Compiling problem: /home/msccomputer/catkin_ws/src/temporal-planning/bin/compileTempoParallel tdom.pddl tins.pddl 3 > dom.pddl 2> ins.pddl
+Compiling temporal problem: python3 /home/msccomputer/catkin_ws/src/temporal-planning/fd_copy/fast-downward.py --build release64 --alias tp-lama --overall-time-limit 3600s --overall-memory-limit 4096 --plan-file sas_plan dom.pddl ins.pddl
+INFO     Running translator.
+INFO     translator input: ['dom.pddl', 'ins.pddl']
+INFO     translator arguments: []
+INFO     translator time limit: 3599.97s
+INFO     translator memory limit: 4096 MB
+INFO     callstring: /usr/bin/python3 /home/msccomputer/catkin_ws/src/temporal-planning/fd_copy/builds/release64/bin/translate/translate.py dom.pddl ins.pddl
+time limit 3599.97 -> (3600, 3601)
+Parsing...
+Parsing: [0.020s CPU, 0.019s wall-clock]
+Normalizing task... [0.000s CPU, 0.002s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.002s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.012s wall-clock]
+Preparing model... [0.010s CPU, 0.007s wall-clock]
+Generated 866 rules.
+Computing model... [0.020s CPU, 0.016s wall-clock]
+1323 relevant atoms
+1442 auxiliary atoms
+2765 final queue length
+5166 total queue pushes
+Completing instantiation... [0.030s CPU, 0.034s wall-clock]
+Instantiating: [0.070s CPU, 0.072s wall-clock]
+Computing fact groups...
+Finding invariants...
+233 initial candidates
+Finding invariants: [9.100s CPU, 9.097s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+564 uncovered facts
+Choosing groups: [0.010s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [9.110s CPU, 9.104s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.010s CPU, 0.003s wall-clock]
+Translating task: [0.060s CPU, 0.054s wall-clock]
+2336 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+53 operators removed
+0 axioms removed
+264 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.017s wall-clock]
+Translator variables: 435
+Translator derived variables: 13
+Translator facts: 879
+Translator goal facts: 5
+Translator mutex groups: 2
+Translator total mutex groups size: 13
+Translator operators: 377
+Translator axioms: 13
+Translator task size: 11132
+Translator peak memory: 250536 KB
+Writing output... [0.000s CPU, 0.008s wall-clock]
+Done! [9.280s CPU, 9.279s wall-clock]
+INFO     Running preprocessor (release64).
+INFO     preprocessor input: output.sas
+INFO     preprocessor arguments: []
+INFO     preprocessor time limit: 3590.66s
+INFO     preprocessor memory limit: 4096 MB
+INFO     callstring: /home/msccomputer/catkin_ws/src/temporal-planning/fd_copy/builds/release64/bin/preprocess < output.sas
+time limit 3590.66 -> (3591, 3592)
+Building causal graph...
+The causal graph is not acyclic.
+372 variables of 435 necessary
+0 of 2 mutex groups necessary.
+377 of 377 operators necessary.
+13 of 13 axiom rules necessary.
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor facts: 753
+Preprocessor derived variables: 13
+Preprocessor task size: 10854
+Writing output...
+done
+INFO     Running search (release64).
+INFO     search input: output
+INFO     search arguments: ['--if-unit-cost', '--heuristic', 'hlm,hff=lm_ff_syn(lm_rhw(reasonable_orders=true))', '--search', 'tp_lazy_greedy([hff,hlm],preferred=[hff,hlm])', '--if-non-unit-cost', '--heuristic', 'hlm1,hff1=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=one,cost_type=one))', '--heuristic', 'hlm2,hff2=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=plusone,cost_type=plusone))', '--search', 'tp_iterated([tp_lazy_greedy([hff1,hlm1],preferred=[hff1,hlm1],cost_type=one,reopen_closed=false),tp_lazy_greedy([hff2,hlm2],preferred=[hff2,hlm2],reopen_closed=false)],repeat_last=false,continue_on_fail=false)', '--always']
+INFO     search time limit: 3590.54s
+INFO     search memory limit: 4096 MB
+INFO     search executable: /home/msccomputer/catkin_ws/src/temporal-planning/fd_copy/builds/release64/bin/downward
+INFO     callstring: /home/msccomputer/catkin_ws/src/temporal-planning/fd_copy/builds/release64/bin/downward --if-unit-cost --heuristic 'hlm,hff=lm_ff_syn(lm_rhw(reasonable_orders=true))' --search 'tp_lazy_greedy([hff,hlm],preferred=[hff,hlm])' --if-non-unit-cost --heuristic 'hlm1,hff1=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=one,cost_type=one))' --heuristic 'hlm2,hff2=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=plusone,cost_type=plusone))' --search 'tp_iterated([tp_lazy_greedy([hff1,hlm1],preferred=[hff1,hlm1],cost_type=one,reopen_closed=false),tp_lazy_greedy([hff2,hlm2],preferred=[hff2,hlm2],reopen_closed=false)],repeat_last=false,continue_on_fail=false)' --always --internal-plan-file sas_plan < output
+time limit 3590.54 -> (3591, 3592)
+reading input... [t=0s]
+done reading input! [t=0.00391253s]
+packing state variables...done! [t=0.00391253s]
+Variables: 372
+Facts: 753
+Bytes per state: 48
+Building successor generator...done! [t=0.00791196s]
+done initalizing global data [t=0.00791196s]
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.0159997s
+Discovered 69 landmarks, of which 0 are disjunctive and 0 are conjunctive 
+184 edges
+Initializing landmarks count heuristic...
+51 initial landmarks, 5 goal landmarks
+Initializing LAMA-FF synergy object
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+Switch from bucket-based to heap-based queue at key = 100005, num_pushes = 376
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.0159999s
+Discovered 69 landmarks, of which 0 are disjunctive and 0 are conjunctive 
+184 edges
+Initializing landmarks count heuristic...
+51 initial landmarks, 5 goal landmarks
+Initializing LAMA-FF synergy object
+Starting search: tp_lazy_greedy(list(hff1, hlm1), preferred = list(hff1, hlm1), cost_type = one, reopen_closed = false)
+Conducting TP lazy best first search, (real) bound = 2147483647
+New best heuristic value for <missing>: 18
+New best heuristic value for <missing>: 18
+[g=0, 1 evaluated, 0 expanded, t=0.0399115s, 8000 KB]
+Initial heuristic value for <missing>: 18
+Initial heuristic value for <missing>: 18
+New best heuristic value for <missing>: 17
+[g=6, 8 evaluated, 7 expanded, t=0.0399115s, 8000 KB]
+New best heuristic value for <missing>: 17
+New best heuristic value for <missing>: 16
+[g=7, 9 evaluated, 8 expanded, t=0.0399115s, 8000 KB]
+New best heuristic value for <missing>: 15
+New best heuristic value for <missing>: 15
+[g=9, 11 evaluated, 10 expanded, t=0.0399115s, 8000 KB]
+New best heuristic value for <missing>: 14
+[g=13, 16 evaluated, 15 expanded, t=0.0399115s, 8000 KB]
+New best heuristic value for <missing>: 14
+[g=14, 17 evaluated, 16 expanded, t=0.0399115s, 8000 KB]
+New best heuristic value for <missing>: 13
+New best heuristic value for <missing>: 13
+[g=19, 27 evaluated, 26 expanded, t=0.0439123s, 8000 KB]
+New best heuristic value for <missing>: 12
+[g=20, 28 evaluated, 27 expanded, t=0.0439123s, 8000 KB]
+New best heuristic value for <missing>: 11
+New best heuristic value for <missing>: 11
+[g=22, 30 evaluated, 29 expanded, t=0.0439123s, 8000 KB]
+New best heuristic value for <missing>: 10
+[g=24, 32 evaluated, 31 expanded, t=0.0439123s, 8000 KB]
+New best heuristic value for <missing>: 10
+[g=26, 36 evaluated, 35 expanded, t=0.0439123s, 8000 KB]
+New best heuristic value for <missing>: 9
+New best heuristic value for <missing>: 9
+[g=33, 59 evaluated, 57 expanded, t=0.047912s, 8132 KB]
+New best heuristic value for <missing>: 8
+[g=34, 60 evaluated, 58 expanded, t=0.047912s, 8132 KB]
+New best heuristic value for <missing>: 7
+New best heuristic value for <missing>: 7
+[g=36, 62 evaluated, 60 expanded, t=0.047912s, 8132 KB]
+New best heuristic value for <missing>: 6
+[g=38, 65 evaluated, 63 expanded, t=0.047912s, 8132 KB]
+New best heuristic value for <missing>: 6
+[g=42, 72 evaluated, 70 expanded, t=0.047912s, 8132 KB]
+New best heuristic value for <missing>: 5
+New best heuristic value for <missing>: 5
+[g=49, 86 evaluated, 83 expanded, t=0.0519121s, 8132 KB]
+New best heuristic value for <missing>: 4
+[g=50, 87 evaluated, 84 expanded, t=0.0519121s, 8132 KB]
+New best heuristic value for <missing>: 3
+New best heuristic value for <missing>: 3
+[g=52, 89 evaluated, 86 expanded, t=0.0519121s, 8132 KB]
+New best heuristic value for <missing>: 2
+[g=53, 90 evaluated, 87 expanded, t=0.0519121s, 8132 KB]
+New best heuristic value for <missing>: 1
+New best heuristic value for <missing>: 1
+[g=54, 91 evaluated, 88 expanded, t=0.0519121s, 8132 KB]
+Solution found!
+Actual search time: 0.0120006s [t=0.0519121s]
+0.000: ( track d0 a5 p0 ) [20.0000]
+20.002: ( communicate d0 a5 p0 ) [1.0000]
+21.004: ( drop_lifevest d0 a5 p0 ) [2.0000]
+23.006: ( drop_marker d0 a5 p0 ) [2.0000]
+ending-phase c0 c1 (1)
+stacking-phase  (1)
+push-track d0 a5 p0 (200000)
+starting-phase  (1)
+launch-track d0 a5 p0 (1)
+reset-searched a5 (0)
+reset-tracking d0 (0)
+ending-phase c1 c2 (1)
+pop-track d0 a5 p0 (1)
+stacking-phase  (1)
+finish-track d0 a5 p0 (1)
+starting-phase  (1)
+reset-tracked p0 (0)
+reset-tracking d0 (0)
+ending-phase c2 c3 (1)
+stacking-phase  (1)
+push-communicate d0 a5 p0 (10000)
+starting-phase  (1)
+launch-communicate d0 a5 p0 (1)
+reset-tracked p0 (0)
+ending-phase c3 c4 (1)
+pop-communicate d0 a5 p0 (1)
+stacking-phase  (1)
+finish-communicate d0 a5 p0 (1)
+starting-phase  (1)
+reset-communicated p0 a5 (0)
+ending-phase c4 c5 (1)
+stacking-phase  (1)
+push-drop_lifevest d0 a5 p0 (20000)
+starting-phase  (1)
+launch-drop_lifevest d0 a5 p0 (1)
+reset-lifevest_available d0 (0)
+reset-rescuing d0 (0)
+reset-tracked p0 (0)
+ending-phase c5 c6 (1)
+pop-drop_lifevest d0 a5 p0 (1)
+stacking-phase  (1)
+finish-drop_lifevest d0 a5 p0 (1)
+starting-phase  (1)
+reset-lifevest_available d0 (0)
+reset-rescued p0 a5 (0)
+reset-rescuing d0 (0)
+ending-phase c6 c7 (1)
+stacking-phase  (1)
+push-drop_marker d0 a5 p0 (20000)
+starting-phase  (1)
+launch-drop_marker d0 a5 p0 (1)
+reset-marker_available d0 (0)
+reset-marking d0 (0)
+reset-tracked p0 (0)
+ending-phase c7 c8 (1)
+pop-drop_marker d0 a5 p0 (1)
+stacking-phase  (1)
+finish-drop_marker d0 a5 p0 (1)
+starting-phase  (1)
+Plan length: 55 step(s).
+Plan cost: 250036
+Expanded 89 state(s).
+Reopened 0 state(s).
+Evaluated 92 state(s).
+Evaluations: 184
+Generated 3824 state(s).
+Dead ends: 2 state(s).
+Number of registered states: 92
+Best solution cost so far: 250036
+Solution found - keep searching
+Starting search: tp_lazy_greedy(list(hff2, hlm2), preferred = list(hff2, hlm2), reopen_closed = false)
+Conducting TP lazy best first search, (real) bound = 250036
+New best heuristic value for <missing>: 250032
+New best heuristic value for <missing>: 250032
+[g=0, 1 evaluated, 0 expanded, t=0.052s, 8132 KB]
+Initial heuristic value for <missing>: 250032
+Initial heuristic value for <missing>: 250032
+New best heuristic value for <missing>: 250031
+[g=1, 2 evaluated, 1 expanded, t=0.052s, 8132 KB]
+New best heuristic value for <missing>: 50032
+New best heuristic value for <missing>: 50033
+[g=200002, 4 evaluated, 3 expanded, t=0.052s, 8132 KB]
+New best heuristic value for <missing>: 50031
+New best heuristic value for <missing>: 50031
+[g=200004, 6 evaluated, 5 expanded, t=0.052s, 8132 KB]
+New best heuristic value for <missing>: 50030
+[g=200004, 7 evaluated, 6 expanded, t=0.052s, 8132 KB]
+New best heuristic value for <missing>: 50030
+New best heuristic value for <missing>: 50029
+[g=200004, 8 evaluated, 7 expanded, t=0.052s, 8132 KB]
+New best heuristic value for <missing>: 50029
+[g=200005, 9 evaluated, 8 expanded, t=0.052s, 8132 KB]
+New best heuristic value for <missing>: 50026
+New best heuristic value for <missing>: 50027
+[g=200006, 10 evaluated, 9 expanded, t=0.056s, 8132 KB]
+New best heuristic value for <missing>: 50025
+[g=200008, 12 evaluated, 11 expanded, t=0.056s, 8132 KB]
+New best heuristic value for <missing>: 50026
+[g=200009, 14 evaluated, 13 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 50025
+[g=200009, 15 evaluated, 14 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 50024
+[g=200010, 16 evaluated, 15 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 40024
+New best heuristic value for <missing>: 40025
+[g=210011, 18 evaluated, 17 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 20025
+New best heuristic value for <missing>: 20026
+[g=230011, 19 evaluated, 18 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 26
+New best heuristic value for <missing>: 27
+[g=250011, 20 evaluated, 19 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 25
+New best heuristic value for <missing>: 25
+[g=250013, 22 evaluated, 21 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 23
+New best heuristic value for <missing>: 23
+[g=250014, 23 evaluated, 22 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 21
+New best heuristic value for <missing>: 21
+[g=250015, 24 evaluated, 23 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 20
+New best heuristic value for <missing>: 20
+[g=250015, 25 evaluated, 24 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 19
+New best heuristic value for <missing>: 19
+[g=250015, 26 evaluated, 25 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 18
+New best heuristic value for <missing>: 18
+[g=250015, 27 evaluated, 26 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 17
+New best heuristic value for <missing>: 17
+[g=250015, 28 evaluated, 27 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 16
+[g=250015, 29 evaluated, 28 expanded, t=0.056s, 8264 KB]
+New best heuristic value for <missing>: 16
+[g=250016, 30 evaluated, 29 expanded, t=0.060s, 8264 KB]
+New best heuristic value for <missing>: 14
+New best heuristic value for <missing>: 14
+[g=250017, 31 evaluated, 30 expanded, t=0.060s, 8264 KB]
+New best heuristic value for <missing>: 12
+New best heuristic value for <missing>: 13
+[g=250019, 33 evaluated, 32 expanded, t=0.060s, 8264 KB]
+New best heuristic value for <missing>: 12
+[g=250020, 35 evaluated, 34 expanded, t=0.060s, 8264 KB]
+New best heuristic value for <missing>: 10
+New best heuristic value for <missing>: 10
+[g=250022, 37 evaluated, 36 expanded, t=0.060s, 8264 KB]
+New best heuristic value for <missing>: 7
+New best heuristic value for <missing>: 8
+[g=250023, 38 evaluated, 37 expanded, t=0.060s, 8264 KB]
+New best heuristic value for <missing>: 5
+New best heuristic value for <missing>: 6
+[g=250024, 39 evaluated, 38 expanded, t=0.060s, 8264 KB]
+New best heuristic value for <missing>: 3
+New best heuristic value for <missing>: 4
+[g=250025, 40 evaluated, 39 expanded, t=0.060s, 8264 KB]
+New best heuristic value for <missing>: 1
+New best heuristic value for <missing>: 2
+[g=250026, 41 evaluated, 40 expanded, t=0.060s, 8264 KB]
+Solution found!
+Actual search time: 0.008s [t=0.060s]
+0.000: ( track d0 a5 p0 ) [20.0000]
+20.002: ( communicate d0 a5 p0 ) [1.0000]
+20.002: ( drop_lifevest d0 a5 p0 ) [2.0000]
+20.002: ( drop_marker d0 a5 p0 ) [2.0000]
+ending-phase c0 c1 (1)
+stacking-phase  (1)
+push-track d0 a5 p0 (200000)
+starting-phase  (1)
+launch-track d0 a5 p0 (1)
+reset-searched a5 (0)
+reset-tracking d0 (0)
+ending-phase c1 c2 (1)
+pop-track d0 a5 p0 (1)
+stacking-phase  (1)
+finish-track d0 a5 p0 (1)
+starting-phase  (1)
+reset-tracked p0 (0)
+reset-tracking d0 (0)
+ending-phase c2 c3 (1)
+stacking-phase  (1)
+push-communicate d0 a5 p0 (10000)
+push-drop_lifevest d0 a5 p0 (20000)
+push-drop_marker d0 a5 p0 (20000)
+starting-phase  (1)
+launch-communicate d0 a5 p0 (1)
+launch-drop_lifevest d0 a5 p0 (1)
+launch-drop_marker d0 a5 p0 (1)
+reset-lifevest_available d0 (0)
+reset-marker_available d0 (0)
+reset-marking d0 (0)
+reset-rescuing d0 (0)
+reset-tracked p0 (0)
+ending-phase c3 c4 (1)
+pop-communicate d0 a5 p0 (1)
+stacking-phase  (1)
+finish-communicate d0 a5 p0 (1)
+starting-phase  (1)
+reset-communicated p0 a5 (0)
+ending-phase c4 c5 (1)
+pop-drop_lifevest d0 a5 p0 (1)
+pop-drop_marker d0 a5 p0 (1)
+stacking-phase  (1)
+finish-drop_marker d0 a5 p0 (1)
+finish-drop_lifevest d0 a5 p0 (1)
+starting-phase  (1)
+Plan length: 41 step(s).
+Plan cost: 250027
+Expanded 41 state(s).
+Reopened 0 state(s).
+Evaluated 42 state(s).
+Evaluations: 84
+Generated 1421 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 115
+Best solution cost so far: 250027
+Solution found - keep searching
+Actual search time: 0.020s [t=0.060s]
+Cumulative statistics:
+Expanded 130 state(s).
+Reopened 0 state(s).
+Evaluated 134 state(s).
+Evaluations: 268
+Generated 5245 state(s).
+Dead ends: 0 state(s).
+Search time: 0.020s
+Total time: 0.060s
+Solution found.
+Peak memory: 8264 KB
+Validating plan: /home/msccomputer/catkin_ws/src/temporal-planning/VAL/bin/Validate -v -t 0.001 tdom.pddl tins.pddl tmp_sas_plan.2 > plan.validation

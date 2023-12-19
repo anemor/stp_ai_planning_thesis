@@ -1,0 +1,29 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/msccomputer/colcon_ws/build/waypoints_generator",
+        "/home/msccomputer/colcon_ws/install/waypoints_generator/lib/python3.8/site-packages",
+        "/home/msccomputer/colcon_ws/build/py_pubsub",
+        "/home/msccomputer/colcon_ws/install/py_pubsub/lib/python3.8/site-packages",
+        "/home/msccomputer/colcon_ws/install/plansys2_msgs/lib/python3.8/site-packages",
+        "/home/msccomputer/colcon_ws/install/anafi_uav_interfaces/lib/python3.8/site-packages",
+        "/opt/ros/foxy/lib/python3.8/site-packages",
+        "/home/msccomputer/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/msccomputer/colcon_ws/build/waypoints_generator",
+        "/home/msccomputer/colcon_ws/install/waypoints_generator/lib/python3.8/site-packages",
+        "/home/msccomputer/colcon_ws/build/py_pubsub",
+        "/home/msccomputer/colcon_ws/install/py_pubsub/lib/python3.8/site-packages",
+        "/home/msccomputer/colcon_ws/install/plansys2_msgs/lib/python3.8/site-packages",
+        "/home/msccomputer/colcon_ws/install/anafi_uav_interfaces/lib/python3.8/site-packages",
+        "/opt/ros/foxy/lib/python3.8/site-packages",
+        "/home/msccomputer/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "files.associations": {
+        "*.tcc": "cpp",
+        "optional": "cpp",
+        "ostream": "cpp"
+    }
+}

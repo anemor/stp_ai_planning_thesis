@@ -1,0 +1,230 @@
+Type-checking move
+...action passes type checking.
+Type-checking land
+...action passes type checking.
+Type-checking takeoff
+...action passes type checking.
+Type-checking search
+...action passes type checking.
+Type-checking communicate
+...action passes type checking.
+Type-checking track
+...action passes type checking.
+Type-checking drop_marker
+...action passes type checking.
+Type-checking drop_lifevest
+...action passes type checking.
+Type-checking recharge
+...action passes type checking.
+Type-checking resupply
+...action passes type checking.
+Checking plan: tmp_sas_plan.2.last
+#Plan to validate:
+
+Plan size: 31
+0:
+(takeoff d0 h0) - start
+ 
+5:
+Invariant for (takeoff d0 h0)
+ 
+5:
+(move d0 h0 a5) - start
+(takeoff d0 h0) - end
+ 
+15:
+Invariant for (move d0 h0 a5)
+ 
+15:
+(move d0 h0 a5) - end
+(search d0 a5) - start
+ 
+110:
+Invariant for (search d0 a5)
+ 
+110:
+(search d0 a5) - end
+(move d0 a5 a6) - start
+ 
+120:
+Invariant for (move d0 a5 a6)
+ 
+120:
+(move d0 a5 a6) - end
+(search d0 a6) - start
+ 
+215:
+Invariant for (search d0 a6)
+ 
+215:
+(search d0 a6) - end
+(move d0 a6 a7) - start
+ 
+225:
+Invariant for (move d0 a6 a7)
+ 
+225:
+(move d0 a6 a7) - end
+(search d0 a7) - start
+ 
+320:
+Invariant for (search d0 a7)
+ 
+320:
+(search d0 a7) - end
+(move d0 a7 a6) - start
+ 
+330:
+Invariant for (move d0 a7 a6)
+ 
+330:
+(move d0 a7 a6) - end
+ 
+330.002:
+(move d0 a6 a5) - start
+ 
+340.002:
+Invariant for (move d0 a6 a5)
+ 
+340.002:
+(move d0 a6 a5) - end
+ 
+340.004:
+(move d0 a5 h0) - start
+ 
+350.004:
+Invariant for (move d0 a5 h0)
+ 
+350.004:
+(move d0 a5 h0) - end
+(search d0 h0) - start
+ 
+445.004:
+Invariant for (search d0 h0)
+ 
+445.004:
+(search d0 h0) - end
+(move d0 h0 a0) - start
+ 
+455.004:
+Invariant for (move d0 h0 a0)
+ 
+455.004:
+(move d0 h0 a0) - end
+(search d0 a0) - start
+ 
+550.004:
+Invariant for (search d0 a0)
+ 
+550.004:
+(search d0 a0) - end
+(move d0 a0 a1) - start
+ 
+560.004:
+Invariant for (move d0 a0 a1)
+ 
+560.004:
+(move d0 a0 a1) - end
+(search d0 a1) - start
+ 
+655.004:
+Invariant for (search d0 a1)
+ 
+655.004:
+(search d0 a1) - end
+(move d0 a1 a0) - start
+ 
+665.004:
+Invariant for (move d0 a1 a0)
+ 
+665.004:
+(move d0 a1 a0) - end
+ 
+665.006:
+(move d0 a0 a2) - start
+ 
+675.006:
+Invariant for (move d0 a0 a2)
+ 
+675.006:
+(move d0 a0 a2) - end
+(search d0 a2) - start
+ 
+770.006:
+Invariant for (search d0 a2)
+ 
+770.006:
+(search d0 a2) - end
+(move d0 a2 a3) - start
+ 
+780.006:
+Invariant for (move d0 a2 a3)
+ 
+780.006:
+(move d0 a2 a3) - end
+(search d0 a3) - start
+ 
+875.006:
+Invariant for (search d0 a3)
+ 
+875.006:
+(search d0 a3) - end
+(move d0 a3 a4) - start
+ 
+885.006:
+Invariant for (move d0 a3 a4)
+ 
+885.006:
+(move d0 a3 a4) - end
+(search d0 a4) - start
+ 
+980.006:
+Invariant for (search d0 a4)
+ 
+980.006:
+(search d0 a4) - end
+ 
+980.008:
+(move d0 a4 a3) - start
+ 
+990.008:
+Invariant for (move d0 a4 a3)
+ 
+990.008:
+(move d0 a4 a3) - end
+ 
+990.01:
+(move d0 a3 h0) - start
+ 
+1000.01:
+Invariant for (move d0 a3 h0)
+ 
+1000.01:
+(move d0 a3 h0) - end
+(land d0 h0) - start
+ 
+1030.01:
+Invariant for (land d0 h0)
+ 
+1030.01:
+(land d0 h0) - end
+ 
+
+Plan Validation details
+-----------------------
+
+Checking next happening (time 0)
+Plan failed because of unsatisfied precondition in:
+(takeoff d0 h0) - start
+
+Plan failed to execute
+
+Plan Repair Advice:
+
+(takeoff d0 h0) - start has an unsatisfied precondition at time 0
+Failed duration constraint: Set the duration to 5
+(Set (landed d0) to true)
+
+
+Failed plans:
+ tmp_sas_plan.2.last 

@@ -1,0 +1,227 @@
+Type-checking move
+...action passes type checking.
+Type-checking land
+...action passes type checking.
+Type-checking takeoff
+...action passes type checking.
+Type-checking search
+...action passes type checking.
+Type-checking communicate
+...action passes type checking.
+Type-checking track
+...action passes type checking.
+Type-checking drop_marker
+...action passes type checking.
+Type-checking drop_lifevest
+...action passes type checking.
+Type-checking recharge
+...action passes type checking.
+Type-checking resupply
+...action passes type checking.
+;Checking plan: tmp_sas_plan.2
+Plan to validate:
+
+Plan size: 18
+0:
+(takeoff d0 h0) - start
+ 
+5:
+Invariant for (takeoff d0 h0)
+ 
+5:
+(takeoff d0 h0) - end
+(move d0 h0 a0) - start
+ 
+15:
+Invariant for (move d0 h0 a0)
+ 
+15:
+(move d0 h0 a0) - end
+ 
+15.002:
+(move d0 a0 a1) - start
+ 
+25.002:
+Invariant for (move d0 a0 a1)
+ 
+25.002:
+(search d0 a1) - start
+(move d0 a0 a1) - end
+ 
+120.002:
+Invariant for (search d0 a1)
+ 
+120.002:
+(search d0 a1) - end
+(move d0 a1 a0) - start
+ 
+130.002:
+Invariant for (move d0 a1 a0)
+ 
+130.002:
+(move d0 a1 a0) - end
+ 
+130.004:
+(move d0 a0 a2) - start
+ 
+140.004:
+Invariant for (move d0 a0 a2)
+ 
+140.004:
+(move d0 a0 a2) - end
+(search d0 a2) - start
+ 
+235.004:
+Invariant for (search d0 a2)
+ 
+235.004:
+(search d0 a2) - end
+(move d0 a2 a3) - start
+ 
+245.004:
+Invariant for (move d0 a2 a3)
+ 
+245.004:
+(move d0 a2 a3) - end
+(search d0 a3) - start
+ 
+340.004:
+Invariant for (search d0 a3)
+ 
+340.004:
+(search d0 a3) - end
+(move d0 a3 a4) - start
+ 
+350.004:
+Invariant for (move d0 a3 a4)
+ 
+350.004:
+(move d0 a3 a4) - end
+(search d0 a4) - start
+ 
+445.004:
+Invariant for (search d0 a4)
+ 
+445.004:
+(search d0 a4) - end
+(move d0 a4 a3) - start
+ 
+455.004:
+Invariant for (move d0 a4 a3)
+ 
+455.004:
+(move d0 a4 a3) - end
+ 
+455.006:
+(move d0 a3 h0) - start
+ 
+465.006:
+Invariant for (move d0 a3 h0)
+ 
+465.006:
+(move d0 a3 h0) - end
+(land d0 h0) - start
+ 
+495.006:
+Invariant for (land d0 h0)
+ 
+495.006:
+(land d0 h0) - end
+ 
+
+Plan Validation details
+-----------------------
+
+Checking next happening (time 0)
+
+Checking next happening (time 5)
+
+Checking next happening (time 5)
+Deleting (landed d0)
+Deleting (drone_at d0 h0)
+
+Checking next happening (time 15)
+
+Checking next happening (time 15)
+Adding (drone_at d0 a0)
+
+Checking next happening (time 15.002)
+Deleting (drone_at d0 a0)
+
+Checking next happening (time 25.002)
+
+Checking next happening (time 25.002)
+Adding (drone_at d0 a1)
+
+Checking next happening (time 120.002)
+
+Checking next happening (time 120.002)
+Deleting (drone_at d0 a1)
+Adding (searched a1)
+
+Checking next happening (time 130.002)
+
+Checking next happening (time 130.002)
+Adding (drone_at d0 a0)
+
+Checking next happening (time 130.004)
+Deleting (drone_at d0 a0)
+
+Checking next happening (time 140.004)
+
+Checking next happening (time 140.004)
+Adding (drone_at d0 a2)
+
+Checking next happening (time 235.004)
+
+Checking next happening (time 235.004)
+Deleting (drone_at d0 a2)
+Adding (searched a2)
+
+Checking next happening (time 245.004)
+
+Checking next happening (time 245.004)
+Adding (drone_at d0 a3)
+
+Checking next happening (time 340.004)
+
+Checking next happening (time 340.004)
+Deleting (drone_at d0 a3)
+Adding (searched a3)
+
+Checking next happening (time 350.004)
+
+Checking next happening (time 350.004)
+Adding (drone_at d0 a4)
+
+Checking next happening (time 445.004)
+
+Checking next happening (time 445.004)
+Deleting (drone_at d0 a4)
+Adding (searched a4)
+
+Checking next happening (time 455.004)
+
+Checking next happening (time 455.004)
+Adding (drone_at d0 a3)
+
+Checking next happening (time 455.006)
+Deleting (drone_at d0 a3)
+
+Checking next happening (time 465.006)
+
+Checking next happening (time 465.006)
+Adding (drone_at d0 h0)
+
+Checking next happening (time 495.006)
+
+Checking next happening (time 495.006)
+Adding (landed d0)
+Plan executed successfully - checking goal
+Plan valid
+Final value: 14 
+
+Successful plans:
+Value: 14
+ tmp_sas_plan.2 14 
+

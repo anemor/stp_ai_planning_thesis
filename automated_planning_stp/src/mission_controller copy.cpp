@@ -1,6 +1,6 @@
 #include "automated_planning/mission_controller.hpp"
 
-void MissionControllerNode : 
+
 void MissionControllerNode::init()
 {
   // Verify that the system is set correctly

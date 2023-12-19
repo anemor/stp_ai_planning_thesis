@@ -1,0 +1,93 @@
+Type-checking move
+...action passes type checking.
+Type-checking land
+...action passes type checking.
+Type-checking takeoff
+...action passes type checking.
+Type-checking search
+...action passes type checking.
+Type-checking communicate
+...action passes type checking.
+Type-checking track
+...action passes type checking.
+Type-checking drop_marker
+...action passes type checking.
+Type-checking drop_lifevest
+...action passes type checking.
+Type-checking recharge
+...action passes type checking.
+Type-checking resupply
+...action passes type checking.
+;Checking plan: tmp_sas_plan.2
+Plan to validate:
+
+Plan size: 5
+0:
+(track d0 a5 p0) - start
+ 
+20:
+Invariant for (track d0 a5 p0)
+ 
+20:
+(track d0 a5 p0) - end
+ 
+20.002:
+(drop_lifevest d0 a5 p0) - start
+(drop_marker d0 a5 p0) - start
+(communicate d0 a5 p0) - start
+ 
+21.002:
+Invariant for (drop_lifevest d0 a5 p0)
+Invariant for (drop_marker d0 a5 p0)
+Invariant for (communicate d0 a5 p0)
+ 
+21.002:
+(communicate d0 a5 p0) - end
+ 
+22.002:
+Invariant for (drop_lifevest d0 a5 p0)
+Invariant for (drop_marker d0 a5 p0)
+ 
+22.002:
+(drop_lifevest d0 a5 p0) - end
+(drop_marker d0 a5 p0) - end
+ 
+
+Plan Validation details
+-----------------------
+
+Checking next happening (time 0)
+Adding (tracking d0)
+
+Checking next happening (time 20)
+
+Checking next happening (time 20)
+Deleting (tracking d0)
+Adding (tracked p0)
+
+Checking next happening (time 20.002)
+Adding (rescuing d0)
+Adding (marking d0)
+
+Checking next happening (time 21.002)
+
+Checking next happening (time 21.002)
+Adding (communicated p0 a5)
+
+Checking next happening (time 22.002)
+
+Checking next happening (time 22.002)
+Deleting (rescuing d0)
+Deleting (lifevest_available d0)
+Deleting (marking d0)
+Deleting (marker_available d0)
+Adding (rescued p0 a5)
+Adding (marked p0 a5)
+Plan executed successfully - checking goal
+Plan valid
+Final value: 4 
+
+Successful plans:
+Value: 4
+ tmp_sas_plan.2 4 
+

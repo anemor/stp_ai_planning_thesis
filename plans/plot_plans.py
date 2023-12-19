@@ -1,8 +1,8 @@
 import re
 import matplotlib.pyplot as plt
 
-filename = "/home/msccomputer/catkin_ws/src/temporal-planning/tmp_sas_plan.2"
-# filename = "sar_simple_2drones.2"
+# filename = "/home/msccomputer/catkin_ws/src/temporal-planning/tmp_sas_plan.2"
+filename = "3_detection_1drone/tmp_sas_plan.2"
 
 actions = []
 with open(filename, "r") as file:
