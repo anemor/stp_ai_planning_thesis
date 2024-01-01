@@ -8,22 +8,16 @@
     (:init
         ; 1 drones landed at helipads
         ; (drone_at d0 h0)
-        ; (landed d0)
+        (drone_at d0 elz1)
+        (landed d0)
         (lifevest_available d0)
         (marker_available d0)
 
-        ; (drone_at d1 h1)
-        ; (landed d1)
+        (drone_at d1 h1)
+        (landed d1)
         (lifevest_available d1)
         (marker_available d1)
         
-        (drone_at d0 a5)
-        (drone_at d1 a4)
-
-        (searched a4)
-        (searched a5)
-        (searched h0)
-
         (can_land h0)
         (can_land h1)
         ; (can_land elz0)
@@ -69,14 +63,14 @@
         (path a4 h1)
 
         ; emergency landing zones
-        (path h1 elz0)
-        (path elz0 h1)
+        ; (path h1 elz0)
+        ; (path elz0 h1)
+        ; (path a1 elz0)
+        ; (path elz0 a1)
         (path a7 elz1)
         (path elz1 a7)
 
 
-        (= (battery_charge d0) 35) ; == low battery in mission_parameters.yaml
-        (= (battery_charge d1) 100) ; == low battery in mission_parameters.yaml
 
         ; distances on the map
         ( = ( distance h0 a0 ) 20 )
@@ -124,8 +118,8 @@
         ( = ( distance a7 elz1 ) 20 )
         ( = ( search_distance a7 ) 19 )
 
-        ( = ( distance elz0 a1 ) 20 )
-        ( = ( search_distance elz0 ) 19 )
+        ; ( = ( distance elz0 a1 ) 20 )
+        ; ( = ( search_distance elz0 ) 19 )
         
         ( = ( distance elz1 a7 ) 20 )
         ( = ( search_distance elz1 ) 19 )
@@ -147,20 +141,17 @@
             (searched a1)
             (searched a2)
             (searched a3)
-
+            (searched a4)
+            (searched a5)
             (searched a6)
             (searched a7)
 
             ; (drone_at d0 h0)
-            ; (landed d0)
-            (battery_charged d0)
+            (drone_at d0 elz1)
             (landed d0)
-
 
             (drone_at d1 h1)
             (landed d1)
-
-
         )
     )
     ; (:metric minimize (total-time))

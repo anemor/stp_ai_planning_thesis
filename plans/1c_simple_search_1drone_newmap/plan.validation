@@ -1,0 +1,431 @@
+Type-checking move
+...action passes type checking.
+Type-checking land
+...action passes type checking.
+Type-checking takeoff
+...action passes type checking.
+Type-checking search
+...action passes type checking.
+Type-checking communicate
+...action passes type checking.
+Type-checking track
+...action passes type checking.
+Type-checking drop_marker
+...action passes type checking.
+Type-checking drop_lifevest
+...action passes type checking.
+Type-checking recharge
+...action passes type checking.
+Type-checking resupply
+...action passes type checking.
+;Checking plan: tmp_sas_plan.2
+Plan to validate:
+
+Plan size: 39
+0:
+(takeoff d0 elz1) - start
+ 
+5:
+Invariant for (takeoff d0 elz1)
+ 
+5:
+(takeoff d0 elz1) - end
+(move d0 elz1 a7) - start
+ 
+15:
+Invariant for (move d0 elz1 a7)
+ 
+15:
+(move d0 elz1 a7) - end
+(search d0 a7) - start
+ 
+110:
+Invariant for (search d0 a7)
+ 
+110:
+(search d0 a7) - end
+(move d0 a7 a6) - start
+ 
+120:
+Invariant for (move d0 a7 a6)
+ 
+120:
+(move d0 a7 a6) - end
+(search d0 a6) - start
+ 
+215:
+Invariant for (search d0 a6)
+ 
+215:
+(search d0 a6) - end
+(move d0 a6 a5) - start
+ 
+225:
+Invariant for (move d0 a6 a5)
+ 
+225:
+(move d0 a6 a5) - end
+(search d0 a5) - start
+ 
+320:
+Invariant for (search d0 a5)
+ 
+320:
+(search d0 a5) - end
+(move d0 a5 h0) - start
+ 
+330:
+Invariant for (move d0 a5 h0)
+ 
+330:
+(move d0 a5 h0) - end
+(search d0 h0) - start
+ 
+425:
+Invariant for (search d0 h0)
+ 
+425:
+(search d0 h0) - end
+(move d0 h0 a0) - start
+ 
+435:
+Invariant for (move d0 h0 a0)
+ 
+435:
+(move d0 h0 a0) - end
+(search d0 a0) - start
+ 
+530:
+Invariant for (search d0 a0)
+ 
+530:
+(search d0 a0) - end
+(move d0 a0 a1) - start
+ 
+540:
+Invariant for (move d0 a0 a1)
+ 
+540:
+(move d0 a0 a1) - end
+(search d0 a1) - start
+ 
+635:
+Invariant for (search d0 a1)
+ 
+635:
+(search d0 a1) - end
+ 
+635.002:
+(move d0 a1 a0) - start
+ 
+645.002:
+Invariant for (move d0 a1 a0)
+ 
+645.002:
+(move d0 a1 a0) - end
+ 
+645.004:
+(move d0 a0 a2) - start
+ 
+655.004:
+Invariant for (move d0 a0 a2)
+ 
+655.004:
+(move d0 a0 a2) - end
+(search d0 a2) - start
+ 
+750.004:
+Invariant for (search d0 a2)
+ 
+750.004:
+(search d0 a2) - end
+(move d0 a2 a3) - start
+ 
+760.004:
+Invariant for (move d0 a2 a3)
+ 
+760.004:
+(move d0 a2 a3) - end
+(search d0 a3) - start
+ 
+855.004:
+Invariant for (search d0 a3)
+ 
+855.004:
+(search d0 a3) - end
+(move d0 a3 a4) - start
+ 
+865.004:
+Invariant for (move d0 a3 a4)
+ 
+865.004:
+(move d0 a3 a4) - end
+(search d0 a4) - start
+ 
+960.004:
+Invariant for (search d0 a4)
+ 
+960.004:
+(search d0 a4) - end
+ 
+960.006:
+(move d0 a4 a3) - start
+ 
+970.006:
+Invariant for (move d0 a4 a3)
+ 
+970.006:
+(move d0 a4 a3) - end
+ 
+970.008:
+(move d0 a3 h0) - start
+ 
+980.008:
+Invariant for (move d0 a3 h0)
+ 
+980.008:
+(move d0 a3 h0) - end
+ 
+980.01:
+(move d0 h0 a5) - start
+ 
+990.01:
+Invariant for (move d0 h0 a5)
+ 
+990.01:
+(move d0 h0 a5) - end
+ 
+990.012:
+(move d0 a5 a6) - start
+ 
+1000.012:
+Invariant for (move d0 a5 a6)
+ 
+1000.012:
+(move d0 a5 a6) - end
+ 
+1000.014:
+(move d0 a6 a7) - start
+ 
+1010.014:
+Invariant for (move d0 a6 a7)
+ 
+1010.014:
+(move d0 a6 a7) - end
+ 
+1010.016:
+(move d0 a7 elz1) - start
+ 
+1020.016:
+Invariant for (move d0 a7 elz1)
+ 
+1020.016:
+(move d0 a7 elz1) - end
+ 
+1020.018:
+(search d0 elz1) - start
+ 
+1115.018:
+Invariant for (search d0 elz1)
+ 
+1115.018:
+(search d0 elz1) - end
+ 
+1115.02:
+(land d0 elz1) - start
+ 
+1145.02:
+Invariant for (land d0 elz1)
+ 
+1145.02:
+(land d0 elz1) - end
+ 
+
+Plan Validation details
+-----------------------
+
+Checking next happening (time 0)
+
+Checking next happening (time 5)
+
+Checking next happening (time 5)
+Deleting (landed d0)
+Deleting (drone_at d0 elz1)
+
+Checking next happening (time 15)
+
+Checking next happening (time 15)
+Adding (drone_at d0 a7)
+
+Checking next happening (time 110)
+
+Checking next happening (time 110)
+Deleting (drone_at d0 a7)
+Adding (searched a7)
+
+Checking next happening (time 120)
+
+Checking next happening (time 120)
+Adding (drone_at d0 a6)
+
+Checking next happening (time 215)
+
+Checking next happening (time 215)
+Deleting (drone_at d0 a6)
+Adding (searched a6)
+
+Checking next happening (time 225)
+
+Checking next happening (time 225)
+Adding (drone_at d0 a5)
+
+Checking next happening (time 320)
+
+Checking next happening (time 320)
+Deleting (drone_at d0 a5)
+Adding (searched a5)
+
+Checking next happening (time 330)
+
+Checking next happening (time 330)
+Adding (drone_at d0 h0)
+
+Checking next happening (time 425)
+
+Checking next happening (time 425)
+Deleting (drone_at d0 h0)
+Adding (searched h0)
+
+Checking next happening (time 435)
+
+Checking next happening (time 435)
+Adding (drone_at d0 a0)
+
+Checking next happening (time 530)
+
+Checking next happening (time 530)
+Deleting (drone_at d0 a0)
+Adding (searched a0)
+
+Checking next happening (time 540)
+
+Checking next happening (time 540)
+Adding (drone_at d0 a1)
+
+Checking next happening (time 635)
+
+Checking next happening (time 635)
+Adding (searched a1)
+
+Checking next happening (time 635.002)
+Deleting (drone_at d0 a1)
+
+Checking next happening (time 645.002)
+
+Checking next happening (time 645.002)
+Adding (drone_at d0 a0)
+
+Checking next happening (time 645.004)
+Deleting (drone_at d0 a0)
+
+Checking next happening (time 655.004)
+
+Checking next happening (time 655.004)
+Adding (drone_at d0 a2)
+
+Checking next happening (time 750.004)
+
+Checking next happening (time 750.004)
+Deleting (drone_at d0 a2)
+Adding (searched a2)
+
+Checking next happening (time 760.004)
+
+Checking next happening (time 760.004)
+Adding (drone_at d0 a3)
+
+Checking next happening (time 855.004)
+
+Checking next happening (time 855.004)
+Deleting (drone_at d0 a3)
+Adding (searched a3)
+
+Checking next happening (time 865.004)
+
+Checking next happening (time 865.004)
+Adding (drone_at d0 a4)
+
+Checking next happening (time 960.004)
+
+Checking next happening (time 960.004)
+Adding (searched a4)
+
+Checking next happening (time 960.006)
+Deleting (drone_at d0 a4)
+
+Checking next happening (time 970.006)
+
+Checking next happening (time 970.006)
+Adding (drone_at d0 a3)
+
+Checking next happening (time 970.008)
+Deleting (drone_at d0 a3)
+
+Checking next happening (time 980.008)
+
+Checking next happening (time 980.008)
+Adding (drone_at d0 h0)
+
+Checking next happening (time 980.01)
+Deleting (drone_at d0 h0)
+
+Checking next happening (time 990.01)
+
+Checking next happening (time 990.01)
+Adding (drone_at d0 a5)
+
+Checking next happening (time 990.012)
+Deleting (drone_at d0 a5)
+
+Checking next happening (time 1000.012)
+
+Checking next happening (time 1000.012)
+Adding (drone_at d0 a6)
+
+Checking next happening (time 1000.014)
+Deleting (drone_at d0 a6)
+
+Checking next happening (time 1010.014)
+
+Checking next happening (time 1010.014)
+Adding (drone_at d0 a7)
+
+Checking next happening (time 1010.016)
+Deleting (drone_at d0 a7)
+
+Checking next happening (time 1020.016)
+
+Checking next happening (time 1020.016)
+Adding (drone_at d0 elz1)
+
+Checking next happening (time 1020.018)
+
+Checking next happening (time 1115.018)
+
+Checking next happening (time 1115.018)
+Adding (searched elz1)
+
+Checking next happening (time 1115.02)
+
+Checking next happening (time 1145.02)
+
+Checking next happening (time 1145.02)
+Adding (landed d0)
+Plan executed successfully - checking goal
+Plan valid
+Final value: 28 
+
+Successful plans:
+Value: 28
+ tmp_sas_plan.2 28 
+

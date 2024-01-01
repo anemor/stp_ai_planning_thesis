@@ -1,0 +1,283 @@
+Type-checking move
+...action passes type checking.
+Type-checking land
+...action passes type checking.
+Type-checking takeoff
+...action passes type checking.
+Type-checking search
+...action passes type checking.
+Type-checking communicate
+...action passes type checking.
+Type-checking track
+...action passes type checking.
+Type-checking drop_marker
+...action passes type checking.
+Type-checking drop_lifevest
+...action passes type checking.
+Type-checking recharge
+...action passes type checking.
+Type-checking resupply
+...action passes type checking.
+Checking plan: tmp_sas_plan.2
+Plan to validate:
+
+Plan size: 36
+0:
+(takeoff d0 elz1) - start
+(takeoff d1 h1) - start
+ 
+5:
+Invariant for (takeoff d0 elz1)
+Invariant for (takeoff d1 h1)
+ 
+5:
+(takeoff d0 elz1) - end
+(takeoff d1 h1) - end
+(move d1 h1 a2) - start
+ 
+17.361:
+Invariant for (move d1 h1 a2)
+ 
+17.361:
+(search d0 elz1) - start
+ 
+27.361:
+Invariant for (move d1 h1 a2)
+Invariant for (search d0 elz1)
+ 
+27.361:
+(search d1 a2) - start
+ 
+27.3617:
+Invariant for (move d1 h1 a2)
+Invariant for (search d0 elz1)
+Invariant for (search d1 a2)
+ 
+27.3617:
+(move d1 h1 a2) - end
+ 
+112.361:
+Invariant for (search d0 elz1)
+Invariant for (search d1 a2)
+ 
+112.361:
+(search d0 elz1) - end
+(move d0 elz1 a7) - start
+ 
+122.361:
+Invariant for (search d1 a2)
+Invariant for (move d0 elz1 a7)
+ 
+122.361:
+(search d1 a2) - end
+(move d0 elz1 a7) - end
+(move d1 a2 a0) - start
+(search d0 a7) - start
+ 
+132.361:
+Invariant for (move d1 a2 a0)
+Invariant for (search d0 a7)
+ 
+132.361:
+(move d1 a2 a0) - end
+(search d1 a0) - start
+ 
+217.361:
+Invariant for (search d0 a7)
+Invariant for (search d1 a0)
+ 
+217.361:
+(search d0 a7) - end
+(move d0 a7 a6) - start
+ 
+227.361:
+Invariant for (search d1 a0)
+Invariant for (move d0 a7 a6)
+ 
+227.361:
+(search d1 a0) - end
+(move d0 a7 a6) - end
+(move d1 a0 a1) - start
+(search d0 a6) - start
+ 
+237.361:
+Invariant for (move d1 a0 a1)
+Invariant for (search d0 a6)
+ 
+237.361:
+(move d1 a0 a1) - end
+(search d1 a1) - start
+ 
+322.361:
+Invariant for (search d0 a6)
+Invariant for (search d1 a1)
+ 
+322.361:
+(search d0 a6) - end
+(move d0 a6 a5) - start
+ 
+332.361:
+Invariant for (search d1 a1)
+Invariant for (move d0 a6 a5)
+ 
+332.361:
+(search d1 a1) - end
+(move d0 a6 a5) - end
+(search d0 a5) - start
+ 
+427.361:
+Invariant for (search d0 a5)
+ 
+427.361:
+(search d0 a5) - end
+ 
+427.363:
+(move d0 a5 a6) - start
+ 
+437.363:
+Invariant for (move d0 a5 a6)
+ 
+437.363:
+(move d0 a5 a6) - end
+ 
+437.365:
+(move d0 a6 a7) - start
+(move d1 a1 a0) - start
+ 
+447.365:
+Invariant for (move d0 a6 a7)
+Invariant for (move d1 a1 a0)
+ 
+447.365:
+(move d0 a6 a7) - end
+(move d1 a1 a0) - end
+ 
+447.367:
+(move d1 a0 a2) - start
+(move d0 a7 elz1) - start
+ 
+457.367:
+Invariant for (move d1 a0 a2)
+Invariant for (move d0 a7 elz1)
+ 
+457.367:
+(move d1 a0 a2) - end
+(move d0 a7 elz1) - end
+(land d0 elz1) - start
+ 
+487.367:
+Invariant for (land d0 elz1)
+ 
+487.367:
+(land d0 elz1) - end
+ 
+487.369:
+(move d1 a2 h1) - start
+ 
+501.5111:
+Invariant for (move d1 a2 h1)
+ 
+501.5111:
+(move d1 a2 h1) - end
+ 
+501.513:
+(move d1 h1 a4) - start
+ 
+521.513:
+Invariant for (move d1 h1 a4)
+ 
+521.513:
+(move d1 h1 a4) - end
+(search d1 a4) - start
+ 
+616.513:
+Invariant for (search d1 a4)
+ 
+616.513:
+(search d1 a4) - end
+ 
+616.515:
+(move d1 a4 a3) - start
+ 
+626.515:
+Invariant for (move d1 a4 a3)
+ 
+626.515:
+(move d1 a4 a3) - end
+(search d1 a3) - start
+ 
+721.515:
+Invariant for (search d1 a3)
+ 
+721.515:
+(search d1 a3) - end
+(move d1 a3 a2) - start
+ 
+731.515:
+Invariant for (move d1 a3 a2)
+ 
+731.515:
+(move d1 a3 a2) - end
+ 
+731.517:
+(move d1 a2 h1) - start
+ 
+745.6591:
+Invariant for (move d1 a2 h1)
+ 
+745.6591:
+(move d1 a2 h1) - end
+ 
+745.661:
+(search d1 h1) - start
+ 
+840.661:
+Invariant for (search d1 h1)
+ 
+840.661:
+(search d1 h1) - end
+ 
+840.663:
+(land d1 h1) - start
+ 
+870.663:
+Invariant for (land d1 h1)
+ 
+870.663:
+(land d1 h1) - end
+ 
+
+Plan Validation details
+-----------------------
+
+Checking next happening (time 0)
+
+Checking next happening (time 5)
+
+Checking next happening (time 5)
+Deleting (landed d0)
+Deleting (landed d1)
+Deleting (drone_at d1 h1)
+
+Checking next happening (time 17.361)
+
+Checking next happening (time 17.361)
+
+Checking next happening (time 27.361)
+
+Checking next happening (time 27.361)
+
+Checking next happening (time 27.3617)
+Plan failed because of unsatisfied precondition in:
+Invariant for (search d1 a2)
+
+Plan failed to execute
+
+Plan Repair Advice:
+
+Invariant for (search d1 a2) has its condition unsatisfied between time 27.361 to 27.3617, the condition is satisfied on the empty set. 
+(Set (drone_at d1 a2) to true)
+
+
+Failed plans:
+ tmp_sas_plan.2 

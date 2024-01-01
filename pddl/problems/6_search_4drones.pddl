@@ -18,7 +18,7 @@
         (marker_available d1)
 
 
-        (drone_at d2 elz0)
+        (drone_at d2 elz)
         (landed d2)
         (lifevest_available d2)
         (marker_available d2)
@@ -32,17 +32,17 @@
 
         (can_land h0)
         (can_land h1)
-        (can_land elz0)
+        ; (can_land elz0)
         (can_land elz1)
 
         (can_recharge h0)
         (can_recharge h1)
-        (can_recharge elz0)
+        ; (can_recharge elz0)
         (can_recharge elz1)
 
         (can_resupply h0)
         (can_resupply h1)
-        (can_resupply elz0)
+        ; (can_resupply elz0)
         (can_resupply elz1)
     
         ; MAP ;;;;;;;;;;;;;;;;;;;;;
@@ -75,10 +75,8 @@
         (path a4 h1)
 
         ; emergency landing zones
-        (path h1 elz0)
-        (path elz0 h1)
-        (path a1 elz0)
-        (path elz0 a1)
+        ; (path h1 elz0)
+        ; (path elz0 h1)
         (path a7 elz1)
         (path elz1 a7)
 
@@ -169,10 +167,10 @@
             (drone_at d1 h1)
             (landed d1)
 
-            (drone_at d2 elz0)
+            (drone_at d2 elz1)
             (landed d2)
 
-            ; (drone_at d3 elz1)
+            ; (drone_at d3 elz0)
             ; (landed d3)
 
         )

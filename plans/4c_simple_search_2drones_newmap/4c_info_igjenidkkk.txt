@@ -1,0 +1,1406 @@
+Brukte plutselig sykt lang tid og fant en værre plan ????
+Search time: 502.464s
+Total time: 502.575s
+
+
+ msccomputer on  ~/catkin_ws/src/temporal-planning master $ python2.7 bin/plan.py stp-3 ~/colcon_ws/src/stp_ai_planning_thesis/pddl/domains/sar_testing_stp.pddl ~/colcon_ws/src/stp_ai_planning_thesis/pddl/problems/4_simple_search_2drones.pddl 
+Compiling problem: /home/msccomputer/catkin_ws/src/temporal-planning/bin/compileTempoParallel tdom.pddl tins.pddl 3 > dom.pddl 2> ins.pddl
+Compiling temporal problem: python3 /home/msccomputer/catkin_ws/src/temporal-planning/fd_copy/fast-downward.py --build release64 --alias tp-lama --overall-time-limit 3600s --overall-memory-limit 4096 --plan-file sas_plan dom.pddl ins.pddl
+INFO     Running translator.
+INFO     translator input: ['dom.pddl', 'ins.pddl']
+INFO     translator arguments: []
+INFO     translator time limit: 3599.98s
+INFO     translator memory limit: 4096 MB
+INFO     callstring: /usr/bin/python3 /home/msccomputer/catkin_ws/src/temporal-planning/fd_copy/builds/release64/bin/translate/translate.py dom.pddl ins.pddl
+time limit 3599.98 -> (3600, 3601)
+Parsing...
+Parsing: [0.020s CPU, 0.019s wall-clock]
+Normalizing task... [0.000s CPU, 0.002s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.002s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.012s wall-clock]
+Preparing model... [0.010s CPU, 0.007s wall-clock]
+Generated 866 rules.
+Computing model... [0.020s CPU, 0.022s wall-clock]
+1596 relevant atoms
+1792 auxiliary atoms
+3388 final queue length
+6538 total queue pushes
+Completing instantiation... [0.050s CPU, 0.044s wall-clock]
+Instantiating: [0.090s CPU, 0.088s wall-clock]
+Computing fact groups...
+Finding invariants...
+233 initial candidates
+Finding invariants: [1.140s CPU, 1.140s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+702 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [1.150s CPU, 1.145s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.004s wall-clock]
+Translating task: [0.070s CPU, 0.075s wall-clock]
+3281 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+49 operators removed
+0 axioms removed
+212 propositions removed
+Detecting unreachable propositions: [0.030s CPU, 0.023s wall-clock]
+Translator variables: 599
+Translator derived variables: 13
+Translator facts: 1207
+Translator goal facts: 14
+Translator mutex groups: 2
+Translator total mutex groups size: 13
+Translator operators: 522
+Translator axioms: 13
+Translator task size: 15209
+Translator peak memory: 44000 KB
+Writing output... [0.010s CPU, 0.012s wall-clock]
+Done! [1.370s CPU, 1.367s wall-clock]
+INFO     Running preprocessor (release64).
+INFO     preprocessor input: output.sas
+INFO     preprocessor arguments: []
+INFO     preprocessor time limit: 3598.59s
+INFO     preprocessor memory limit: 4096 MB
+INFO     callstring: /home/msccomputer/catkin_ws/src/temporal-planning/fd_copy/builds/release64/bin/preprocess < output.sas
+time limit 3598.59 -> (3599, 3600)
+Building causal graph...
+The causal graph is not acyclic.
+599 variables of 599 necessary
+0 of 2 mutex groups necessary.
+522 of 522 operators necessary.
+13 of 13 axiom rules necessary.
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor facts: 1207
+Preprocessor derived variables: 13
+Preprocessor task size: 15196
+Writing output...
+done
+INFO     Running search (release64).
+INFO     search input: output
+INFO     search arguments: ['--if-unit-cost', '--heuristic', 'hlm,hff=lm_ff_syn(lm_rhw(reasonable_orders=true))', '--search', 'tp_lazy_greedy([hff,hlm],preferred=[hff,hlm])', '--if-non-unit-cost', '--heuristic', 'hlm1,hff1=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=one,cost_type=one))', '--heuristic', 'hlm2,hff2=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=plusone,cost_type=plusone))', '--search', 'tp_iterated([tp_lazy_greedy([hff1,hlm1],preferred=[hff1,hlm1],cost_type=one,reopen_closed=false),tp_lazy_greedy([hff2,hlm2],preferred=[hff2,hlm2],reopen_closed=false)],repeat_last=false,continue_on_fail=false)', '--always']
+INFO     search time limit: 3598.41s
+INFO     search memory limit: 4096 MB
+INFO     search executable: /home/msccomputer/catkin_ws/src/temporal-planning/fd_copy/builds/release64/bin/downward
+INFO     callstring: /home/msccomputer/catkin_ws/src/temporal-planning/fd_copy/builds/release64/bin/downward --if-unit-cost --heuristic 'hlm,hff=lm_ff_syn(lm_rhw(reasonable_orders=true))' --search 'tp_lazy_greedy([hff,hlm],preferred=[hff,hlm])' --if-non-unit-cost --heuristic 'hlm1,hff1=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=one,cost_type=one))' --heuristic 'hlm2,hff2=lm_ff_syn(lm_rhw(reasonable_orders=true,lm_cost_type=plusone,cost_type=plusone))' --search 'tp_iterated([tp_lazy_greedy([hff1,hlm1],preferred=[hff1,hlm1],cost_type=one,reopen_closed=false),tp_lazy_greedy([hff2,hlm2],preferred=[hff2,hlm2],reopen_closed=false)],repeat_last=false,continue_on_fail=false)' --always --internal-plan-file sas_plan < output
+time limit 3598.41 -> (3599, 3600)
+reading input... [t=0s]
+done reading input! [t=0.00659739s]
+packing state variables...done! [t=0.00659739s]
+Variables: 599
+Facts: 1207
+Bytes per state: 76
+Building successor generator...done! [t=0.0145971s]
+done initalizing global data [t=0.0145971s]
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.0439946s
+Discovered 102 landmarks, of which 54 are disjunctive and 0 are conjunctive 
+273 edges
+Initializing landmarks count heuristic...
+38 initial landmarks, 14 goal landmarks
+Initializing LAMA-FF synergy object
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+Switch from bucket-based to heap-based queue at key = 100005, num_pushes = 603
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.0479993s
+Discovered 102 landmarks, of which 54 are disjunctive and 0 are conjunctive 
+273 edges
+Initializing landmarks count heuristic...
+38 initial landmarks, 14 goal landmarks
+Initializing LAMA-FF synergy object
+Starting search: tp_lazy_greedy(list(hff1, hlm1), preferred = list(hff1, hlm1), cost_type = one, reopen_closed = false)
+Conducting TP lazy best first search, (real) bound = 2147483647
+New best heuristic value for <missing>: 64
+New best heuristic value for <missing>: 74
+[g=0, 1 evaluated, 0 expanded, t=0.110592s, 9584 KB]
+Initial heuristic value for <missing>: 64
+Initial heuristic value for <missing>: 74
+Switch from bucket-based to heap-based queue at key = 1042, num_pushes = 991
+New best heuristic value for <missing>: 63
+[g=4, 16 evaluated, 9 expanded, t=0.114594s, 9584 KB]
+New best heuristic value for <missing>: 73
+[g=4, 20 evaluated, 11 expanded, t=0.114594s, 9584 KB]
+New best heuristic value for <missing>: 72
+[g=5, 32 evaluated, 19 expanded, t=0.118592s, 9584 KB]
+New best heuristic value for <missing>: 71
+[g=7, 38 evaluated, 24 expanded, t=0.118592s, 9584 KB]
+New best heuristic value for <missing>: 70
+[g=9, 144 evaluated, 108 expanded, t=0.138592s, 9584 KB]
+New best heuristic value for <missing>: 61
+[g=8, 1294 evaluated, 819 expanded, t=0.33859s, 10776 KB]
+New best heuristic value for <missing>: 60
+[g=11, 1348 evaluated, 858 expanded, t=0.34659s, 10776 KB]
+New best heuristic value for <missing>: 69
+[g=14, 1430 evaluated, 900 expanded, t=0.358591s, 10908 KB]
+New best heuristic value for <missing>: 68
+[g=12, 2417 evaluated, 1220 expanded, t=0.498582s, 11584 KB]
+New best heuristic value for <missing>: 59
+[g=57, 314395 evaluated, 112796 expanded, t=47.0565s, 223036 KB]
+New best heuristic value for <missing>: 58
+[g=58, 314402 evaluated, 112803 expanded, t=47.0605s, 223036 KB]
+New best heuristic value for <missing>: 57
+[g=60, 314448 evaluated, 112845 expanded, t=47.0685s, 223036 KB]
+New best heuristic value for <missing>: 56
+[g=65, 315508 evaluated, 113534 expanded, t=47.2525s, 224364 KB]
+New best heuristic value for <missing>: 55
+[g=68, 317709 evaluated, 114551 expanded, t=47.5885s, 226216 KB]
+New best heuristic value for <missing>: 54
+[g=70, 317717 evaluated, 114556 expanded, t=47.5885s, 226216 KB]
+New best heuristic value for <missing>: 53
+[g=72, 317749 evaluated, 114580 expanded, t=47.5965s, 226348 KB]
+New best heuristic value for <missing>: 67
+[g=76, 320039 evaluated, 115793 expanded, t=47.9605s, 228604 KB]
+New best heuristic value for <missing>: 51
+[g=77, 321499 evaluated, 116457 expanded, t=48.1925s, 229928 KB]
+New best heuristic value for <missing>: 50
+[g=79, 321510 evaluated, 116462 expanded, t=48.1925s, 229928 KB]
+New best heuristic value for <missing>: 49
+[g=81, 321554 evaluated, 116493 expanded, t=48.2005s, 230064 KB]
+New best heuristic value for <missing>: 47
+[g=85, 324710 evaluated, 118163 expanded, t=48.7244s, 233388 KB]
+New best heuristic value for <missing>: 46
+[g=87, 324722 evaluated, 118171 expanded, t=48.7244s, 233388 KB]
+New best heuristic value for <missing>: 45
+[g=89, 324769 evaluated, 118202 expanded, t=48.7364s, 233520 KB]
+New best heuristic value for <missing>: 66
+[g=95, 325636 evaluated, 118691 expanded, t=48.8764s, 234716 KB]
+New best heuristic value for <missing>: 43
+[g=94, 327604 evaluated, 119644 expanded, t=49.1964s, 237100 KB]
+New best heuristic value for <missing>: 42
+[g=96, 327613 evaluated, 119650 expanded, t=49.1964s, 237100 KB]
+New best heuristic value for <missing>: 41
+[g=98, 327656 evaluated, 119678 expanded, t=49.2044s, 237100 KB]
+New best heuristic value for <missing>: 63
+[g=102, 327866 evaluated, 119776 expanded, t=49.2404s, 237364 KB]
+New best heuristic value for <missing>: 61
+[g=106, 329178 evaluated, 120498 expanded, t=49.4524s, 239088 KB]
+New best heuristic value for <missing>: 40
+[g=107, 329183 evaluated, 120503 expanded, t=49.4524s, 239088 KB]
+New best heuristic value for <missing>: 39
+[g=113, 329497 evaluated, 120638 expanded, t=49.5004s, 239356 KB]
+New best heuristic value for <missing>: 38
+[g=115, 329526 evaluated, 120667 expanded, t=49.5084s, 239488 KB]
+New best heuristic value for <missing>: 60
+[g=118, 329543 evaluated, 120680 expanded, t=49.5124s, 239488 KB]
+New best heuristic value for <missing>: 59
+[g=119, 329547 evaluated, 120681 expanded, t=49.5124s, 239488 KB]
+New best heuristic value for <missing>: 58
+[g=121, 329686 evaluated, 120760 expanded, t=49.5364s, 239752 KB]
+New best heuristic value for <missing>: 57
+[g=127, 330866 evaluated, 121518 expanded, t=49.7404s, 241864 KB]
+New best heuristic value for <missing>: 56
+[g=128, 330869 evaluated, 121520 expanded, t=49.7404s, 241864 KB]
+New best heuristic value for <missing>: 55
+[g=129, 330873 evaluated, 121523 expanded, t=49.7444s, 241864 KB]
+New best heuristic value for <missing>: 54
+[g=132, 333122 evaluated, 122872 expanded, t=50.1243s, 245572 KB]
+New best heuristic value for <missing>: 53
+[g=133, 333134 evaluated, 122881 expanded, t=50.1283s, 245708 KB]
+New best heuristic value for <missing>: 52
+[g=136, 333506 evaluated, 123171 expanded, t=50.2003s, 246368 KB]
+New best heuristic value for <missing>: 37
+[g=141, 333600 evaluated, 123248 expanded, t=50.2203s, 246632 KB]
+New best heuristic value for <missing>: 51
+[g=141, 334293 evaluated, 123557 expanded, t=50.3243s, 247696 KB]
+New best heuristic value for <missing>: 50
+[g=144, 334312 evaluated, 123573 expanded, t=50.3283s, 247828 KB]
+New best heuristic value for <missing>: 49
+[g=145, 334322 evaluated, 123579 expanded, t=50.3283s, 247828 KB]
+New best heuristic value for <missing>: 48
+[g=148, 334655 evaluated, 123827 expanded, t=50.3923s, 248488 KB]
+New best heuristic value for <missing>: 47
+[g=151, 334667 evaluated, 123836 expanded, t=50.3963s, 248488 KB]
+New best heuristic value for <missing>: 46
+[g=152, 334676 evaluated, 123842 expanded, t=50.3963s, 248488 KB]
+New best heuristic value for <missing>: 36
+[g=153, 335150 evaluated, 124217 expanded, t=50.4923s, 249680 KB]
+New best heuristic value for <missing>: 45
+[g=156, 336144 evaluated, 124693 expanded, t=50.6483s, 251396 KB]
+New best heuristic value for <missing>: 44
+[g=178, 351525 evaluated, 132688 expanded, t=53.2722s, 272204 KB]
+New best heuristic value for <missing>: 43
+[g=179, 351529 evaluated, 132691 expanded, t=53.2722s, 272204 KB]
+New best heuristic value for <missing>: 35
+[g=204, 3075052 evaluated, 1213959 expanded, t=486.721s, 2387456 KB]
+New best heuristic value for <missing>: 34
+[g=206, 3075055 evaluated, 1213962 expanded, t=486.721s, 2387456 KB]
+New best heuristic value for <missing>: 33
+[g=208, 3075084 evaluated, 1213991 expanded, t=486.729s, 2387588 KB]
+New best heuristic value for <missing>: 31
+[g=212, 3075740 evaluated, 1214336 expanded, t=486.833s, 2388248 KB]
+New best heuristic value for <missing>: 30
+[g=214, 3075747 evaluated, 1214343 expanded, t=486.833s, 2388248 KB]
+New best heuristic value for <missing>: 42
+[g=215, 3075748 evaluated, 1214344 expanded, t=486.833s, 2388248 KB]
+New best heuristic value for <missing>: 41
+[g=216, 3075753 evaluated, 1214349 expanded, t=486.833s, 2388248 KB]
+New best heuristic value for <missing>: 40
+[g=219, 3075761 evaluated, 1214356 expanded, t=486.837s, 2388248 KB]
+New best heuristic value for <missing>: 39
+[g=220, 3075765 evaluated, 1214359 expanded, t=486.837s, 2388248 KB]
+New best heuristic value for <missing>: 29
+[g=216, 3075790 evaluated, 1214379 expanded, t=486.841s, 2388248 KB]
+New best heuristic value for <missing>: 38
+[g=225, 3077688 evaluated, 1215357 expanded, t=487.149s, 2390360 KB]
+New best heuristic value for <missing>: 37
+[g=226, 3077694 evaluated, 1215363 expanded, t=487.153s, 2390360 KB]
+New best heuristic value for <missing>: 36
+[g=228, 3077700 evaluated, 1215368 expanded, t=487.153s, 2390360 KB]
+New best heuristic value for <missing>: 28
+[g=225, 3077738 evaluated, 1215403 expanded, t=487.161s, 2390492 KB]
+New best heuristic value for <missing>: 35
+[g=232, 3078049 evaluated, 1215580 expanded, t=487.213s, 2390888 KB]
+New best heuristic value for <missing>: 26
+[g=241, 3081812 evaluated, 1217671 expanded, t=487.828s, 2395004 KB]
+New best heuristic value for <missing>: 25
+[g=243, 3081817 evaluated, 1217676 expanded, t=487.828s, 2395004 KB]
+New best heuristic value for <missing>: 34
+[g=243, 3081821 evaluated, 1217680 expanded, t=487.828s, 2395004 KB]
+New best heuristic value for <missing>: 33
+[g=244, 3081832 evaluated, 1217691 expanded, t=487.832s, 2395136 KB]
+New best heuristic value for <missing>: 24
+[g=245, 3081840 evaluated, 1217698 expanded, t=487.832s, 2395136 KB]
+New best heuristic value for <missing>: 32
+[g=249, 3082206 evaluated, 1217926 expanded, t=487.892s, 2395532 KB]
+New best heuristic value for <missing>: 22
+[g=250, 3082653 evaluated, 1218199 expanded, t=487.963s, 2395928 KB]
+New best heuristic value for <missing>: 21
+[g=252, 3082659 evaluated, 1218204 expanded, t=487.967s, 2396064 KB]
+New best heuristic value for <missing>: 20
+[g=254, 3082672 evaluated, 1218215 expanded, t=487.967s, 2396064 KB]
+New best heuristic value for <missing>: 31
+[g=257, 3082781 evaluated, 1218279 expanded, t=487.987s, 2396196 KB]
+New best heuristic value for <missing>: 18
+[g=258, 3082834 evaluated, 1218316 expanded, t=487.995s, 2396196 KB]
+New best heuristic value for <missing>: 17
+[g=260, 3082840 evaluated, 1218322 expanded, t=487.995s, 2396196 KB]
+New best heuristic value for <missing>: 30
+[g=261, 3082846 evaluated, 1218328 expanded, t=487.995s, 2396196 KB]
+New best heuristic value for <missing>: 16
+[g=262, 3082856 evaluated, 1218337 expanded, t=487.999s, 2396196 KB]
+New best heuristic value for <missing>: 15
+[g=263, 3082859 evaluated, 1218340 expanded, t=487.999s, 2396332 KB]
+New best heuristic value for <missing>: 29
+[g=262, 3082864 evaluated, 1218344 expanded, t=487.999s, 2396332 KB]
+New best heuristic value for <missing>: 14
+[g=267, 3083075 evaluated, 1218477 expanded, t=488.035s, 2396596 KB]
+New best heuristic value for <missing>: 13
+[g=269, 3083081 evaluated, 1218481 expanded, t=488.035s, 2396596 KB]
+New best heuristic value for <missing>: 12
+[g=271, 3083097 evaluated, 1218494 expanded, t=488.039s, 2396596 KB]
+New best heuristic value for <missing>: 28
+[g=274, 3083147 evaluated, 1218520 expanded, t=488.043s, 2396728 KB]
+New best heuristic value for <missing>: 10
+New best heuristic value for <missing>: 27
+[g=275, 3083188 evaluated, 1218544 expanded, t=488.051s, 2396728 KB]
+New best heuristic value for <missing>: 9
+[g=277, 3083191 evaluated, 1218547 expanded, t=488.051s, 2396728 KB]
+New best heuristic value for <missing>: 26
+[g=279, 3083199 evaluated, 1218555 expanded, t=488.055s, 2396728 KB]
+New best heuristic value for <missing>: 25
+[g=281, 3083225 evaluated, 1218576 expanded, t=488.059s, 2396728 KB]
+New best heuristic value for <missing>: 24
+[g=282, 3083228 evaluated, 1218578 expanded, t=488.059s, 2396728 KB]
+New best heuristic value for <missing>: 23
+[g=287, 3083324 evaluated, 1218645 expanded, t=488.075s, 2396992 KB]
+New best heuristic value for <missing>: 22
+[g=294, 3083405 evaluated, 1218699 expanded, t=488.091s, 2397128 KB]
+New best heuristic value for <missing>: 21
+[g=295, 3083409 evaluated, 1218702 expanded, t=488.091s, 2397128 KB]
+New best heuristic value for <missing>: 20
+[g=297, 3083416 evaluated, 1218707 expanded, t=488.091s, 2397128 KB]
+New best heuristic value for <missing>: 19
+[g=299, 3083422 evaluated, 1218709 expanded, t=488.091s, 2397128 KB]
+New best heuristic value for <missing>: 18
+[g=303, 3083458 evaluated, 1218737 expanded, t=488.099s, 2397128 KB]
+New best heuristic value for <missing>: 8
+[g=313, 3083822 evaluated, 1218962 expanded, t=488.159s, 2397528 KB]
+New best heuristic value for <missing>: 7
+New best heuristic value for <missing>: 17
+[g=316, 3083830 evaluated, 1218970 expanded, t=488.159s, 2397528 KB]
+New best heuristic value for <missing>: 16
+[g=317, 3083831 evaluated, 1218971 expanded, t=488.159s, 2397528 KB]
+New best heuristic value for <missing>: 5
+New best heuristic value for <missing>: 15
+[g=319, 3083833 evaluated, 1218973 expanded, t=488.163s, 2397528 KB]
+New best heuristic value for <missing>: 4
+[g=320, 3083834 evaluated, 1218974 expanded, t=488.163s, 2397528 KB]
+New best heuristic value for <missing>: 3
+[g=321, 3083839 evaluated, 1218979 expanded, t=488.163s, 2397528 KB]
+New best heuristic value for <missing>: 2
+[g=322, 3083843 evaluated, 1218983 expanded, t=488.163s, 2397660 KB]
+New best heuristic value for <missing>: 14
+[g=323, 3083844 evaluated, 1218984 expanded, t=488.163s, 2397660 KB]
+New best heuristic value for <missing>: 13
+[g=325, 3083849 evaluated, 1218989 expanded, t=488.163s, 2397660 KB]
+New best heuristic value for <missing>: 12
+[g=326, 3083851 evaluated, 1218991 expanded, t=488.163s, 2397660 KB]
+New best heuristic value for <missing>: 11
+[g=328, 3083855 evaluated, 1218995 expanded, t=488.167s, 2397660 KB]
+New best heuristic value for <missing>: 10
+[g=332, 3083864 evaluated, 1219004 expanded, t=488.167s, 2397660 KB]
+New best heuristic value for <missing>: 9
+[g=337, 3083874 evaluated, 1219014 expanded, t=488.167s, 2397660 KB]
+New best heuristic value for <missing>: 8
+[g=338, 3083876 evaluated, 1219016 expanded, t=488.167s, 2397660 KB]
+New best heuristic value for <missing>: 7
+[g=340, 3083878 evaluated, 1219018 expanded, t=488.171s, 2397660 KB]
+New best heuristic value for <missing>: 6
+[g=345, 3083883 evaluated, 1219023 expanded, t=488.171s, 2397660 KB]
+New best heuristic value for <missing>: 5
+[g=346, 3083884 evaluated, 1219024 expanded, t=488.171s, 2397660 KB]
+New best heuristic value for <missing>: 4
+[g=347, 3083886 evaluated, 1219026 expanded, t=488.171s, 2397660 KB]
+New best heuristic value for <missing>: 3
+[g=349, 3083889 evaluated, 1219029 expanded, t=488.171s, 2397660 KB]
+New best heuristic value for <missing>: 1
+New best heuristic value for <missing>: 1
+[g=351, 3083892 evaluated, 1219032 expanded, t=488.171s, 2397660 KB]
+Solution found!
+Actual search time: 488.06s [t=488.171s]
+0.000: ( takeoff d0 elz1 ) [5.0000]
+0.002: ( takeoff d1 h1 ) [5.0000]
+5.000: ( search d0 elz1 ) [95.0000]
+5.002: ( search d1 h1 ) [95.0000]
+100.004: ( land d1 h1 ) [30.0000]
+100.006: ( move d0 elz1 a7 ) [10.0000]
+110.006: ( search d0 a7 ) [95.0000]
+205.006: ( move d0 a7 a6 ) [10.0000]
+215.006: ( search d0 a6 ) [95.0000]
+310.006: ( move d0 a6 a5 ) [10.0000]
+320.006: ( takeoff d1 h1 ) [5.0000]
+320.006: ( search d0 a5 ) [95.0000]
+415.006: ( move d0 a5 a6 ) [10.0000]
+425.006: ( land d1 h1 ) [30.0000]
+425.008: ( move d0 a6 a7 ) [10.0000]
+445.006: ( move d0 a7 elz1 ) [10.0000]
+455.008: ( takeoff d1 h1 ) [5.0000]
+460.008: ( land d0 elz1 ) [30.0000]
+490.008: ( land d1 h1 ) [30.0000]
+520.010: ( takeoff d1 h1 ) [5.0000]
+525.012: ( move d1 h1 a4 ) [20.0000]
+545.012: ( search d1 a4 ) [95.0000]
+640.012: ( move d1 a4 h1 ) [20.0000]
+660.014: ( move d1 h1 a2 ) [22.3617]
+682.375: ( search d1 a2 ) [95.0000]
+777.375: ( move d1 a2 a0 ) [10.0000]
+787.375: ( search d1 a0 ) [95.0000]
+882.375: ( move d1 a0 a1 ) [10.0000]
+892.375: ( search d1 a1 ) [95.0000]
+987.377: ( move d1 a1 a0 ) [10.0000]
+997.379: ( move d1 a0 a2 ) [10.0000]
+1007.381: ( move d1 a2 a3 ) [10.0000]
+1017.381: ( search d1 a3 ) [95.0000]
+1112.381: ( move d1 a3 a2 ) [10.0000]
+1122.383: ( move d1 a2 h1 ) [14.1421]
+1136.525: ( land d1 h1 ) [30.0000]
+ending-phase c0 c1 (1)
+stacking-phase  (1)
+push-takeoff d0 elz1 (50000)
+starting-phase  (1)
+launch-takeoff d0 elz1 (1)
+reset-landed d0 (0)
+ending-phase c1 c2 (1)
+stacking-phase  (1)
+push-takeoff d1 h1 (50000)
+starting-phase  (1)
+launch-takeoff d1 h1 (1)
+reset-landed d1 (0)
+ending-phase c2 c3 (1)
+pop-takeoff d0 elz1 (1)
+stacking-phase  (1)
+push-search d0 elz1 (950000)
+finish-takeoff d0 elz1 (1)
+starting-phase  (1)
+launch-search d0 elz1 (1)
+reset-landed d0 (0)
+ending-phase c3 c4 (1)
+pop-takeoff d1 h1 (1)
+stacking-phase  (1)
+finish-takeoff d1 h1 (1)
+push-search d1 h1 (950000)
+starting-phase  (1)
+launch-search d1 h1 (1)
+reset-landed d1 (0)
+ending-phase c4 c5 (1)
+pop-search d0 elz1 (1)
+stacking-phase  (1)
+finish-search d0 elz1 (1)
+starting-phase  (1)
+reset-searched elz1 (0)
+ending-phase c5 c6 (1)
+pop-search d1 h1 (1)
+stacking-phase  (1)
+finish-search d1 h1 (1)
+starting-phase  (1)
+reset-searched h1 (0)
+ending-phase c6 c7 (1)
+stacking-phase  (1)
+push-land d1 h1 (300000)
+starting-phase  (1)
+launch-land d1 h1 (1)
+reset-searched h1 (0)
+ending-phase c7 c8 (1)
+stacking-phase  (1)
+push-move d0 elz1 a7 (100000)
+starting-phase  (1)
+launch-move d0 elz1 a7 (1)
+reset-drone_at d0 elz1 (0)
+ending-phase c8 c9 (1)
+pop-move d0 elz1 a7 (1)
+stacking-phase  (1)
+push-search d0 a7 (950000)
+finish-move d0 elz1 a7 (1)
+starting-phase  (1)
+launch-search d0 a7 (1)
+reset-drone_at d0 a7 (0)
+ending-phase c9 c0 (1)
+pop-land d1 h1 (1)
+stacking-phase  (1)
+finish-land d1 h1 (1)
+starting-phase  (1)
+reset-landed d1 (0)
+ending-phase c0 c1 (1)
+pop-search d0 a7 (1)
+stacking-phase  (1)
+finish-search d0 a7 (1)
+push-move d0 a7 a6 (100000)
+starting-phase  (1)
+launch-move d0 a7 a6 (1)
+reset-drone_at d0 a7 (0)
+reset-searched a7 (0)
+ending-phase c1 c2 (1)
+pop-move d0 a7 a6 (1)
+stacking-phase  (1)
+finish-move d0 a7 a6 (1)
+push-search d0 a6 (950000)
+starting-phase  (1)
+launch-search d0 a6 (1)
+reset-drone_at d0 a6 (0)
+ending-phase c2 c3 (1)
+pop-search d0 a6 (1)
+stacking-phase  (1)
+finish-search d0 a6 (1)
+push-move d0 a6 a5 (100000)
+starting-phase  (1)
+launch-move d0 a6 a5 (1)
+reset-drone_at d0 a6 (0)
+reset-searched a6 (0)
+ending-phase c3 c4 (1)
+pop-move d0 a6 a5 (1)
+stacking-phase  (1)
+push-takeoff d1 h1 (50000)
+push-search d0 a5 (950000)
+finish-move d0 a6 a5 (1)
+starting-phase  (1)
+launch-takeoff d1 h1 (1)
+launch-search d0 a5 (1)
+reset-drone_at d0 a5 (0)
+reset-landed d1 (0)
+ending-phase c4 c5 (1)
+pop-takeoff d1 h1 (1)
+stacking-phase  (1)
+finish-takeoff d1 h1 (1)
+starting-phase  (1)
+reset-landed d1 (0)
+ending-phase c5 c6 (1)
+pop-search d0 a5 (1)
+stacking-phase  (1)
+finish-search d0 a5 (1)
+push-move d0 a5 a6 (100000)
+starting-phase  (1)
+launch-move d0 a5 a6 (1)
+reset-drone_at d0 a5 (0)
+reset-searched a5 (0)
+ending-phase c6 c7 (1)
+pop-move d0 a5 a6 (1)
+stacking-phase  (1)
+push-land d1 h1 (300000)
+finish-move d0 a5 a6 (1)
+starting-phase  (1)
+launch-land d1 h1 (1)
+reset-drone_at d0 a6 (0)
+reset-searched h1 (0)
+ending-phase c7 c8 (1)
+stacking-phase  (1)
+push-move d0 a6 a7 (100000)
+starting-phase  (1)
+launch-move d0 a6 a7 (1)
+reset-drone_at d0 a6 (0)
+ending-phase c8 c9 (1)
+pop-move d0 a6 a7 (1)
+stacking-phase  (1)
+finish-move d0 a6 a7 (1)
+starting-phase  (1)
+reset-drone_at d0 a7 (0)
+ending-phase c9 c0 (1)
+stacking-phase  (1)
+push-move d0 a7 elz1 (100000)
+starting-phase  (1)
+launch-move d0 a7 elz1 (1)
+reset-drone_at d0 a7 (0)
+ending-phase c0 c1 (1)
+pop-land d1 h1 (1)
+pop-move d0 a7 elz1 (1)
+stacking-phase  (1)
+finish-move d0 a7 elz1 (1)
+finish-land d1 h1 (1)
+starting-phase  (1)
+reset-drone_at d0 elz1 (0)
+reset-landed d1 (0)
+ending-phase c1 c2 (1)
+stacking-phase  (1)
+push-takeoff d1 h1 (50000)
+starting-phase  (1)
+launch-takeoff d1 h1 (1)
+reset-landed d1 (0)
+ending-phase c2 c3 (1)
+pop-takeoff d1 h1 (1)
+stacking-phase  (1)
+push-land d0 elz1 (300000)
+finish-takeoff d1 h1 (1)
+starting-phase  (1)
+launch-land d0 elz1 (1)
+reset-landed d1 (0)
+reset-searched elz1 (0)
+ending-phase c3 c4 (1)
+pop-land d0 elz1 (1)
+stacking-phase  (1)
+push-land d1 h1 (300000)
+finish-land d0 elz1 (1)
+starting-phase  (1)
+launch-land d1 h1 (1)
+reset-landed d0 (0)
+reset-searched h1 (0)
+ending-phase c4 c5 (1)
+pop-land d1 h1 (1)
+stacking-phase  (1)
+finish-land d1 h1 (1)
+starting-phase  (1)
+reset-landed d1 (0)
+ending-phase c5 c6 (1)
+stacking-phase  (1)
+push-takeoff d1 h1 (50000)
+starting-phase  (1)
+launch-takeoff d1 h1 (1)
+reset-landed d1 (0)
+ending-phase c6 c7 (1)
+pop-takeoff d1 h1 (1)
+stacking-phase  (1)
+finish-takeoff d1 h1 (1)
+starting-phase  (1)
+reset-landed d1 (0)
+ending-phase c7 c8 (1)
+stacking-phase  (1)
+push-move d1 h1 a4 (200000)
+starting-phase  (1)
+launch-move d1 h1 a4 (1)
+reset-drone_at d1 h1 (0)
+ending-phase c8 c9 (1)
+pop-move d1 h1 a4 (1)
+stacking-phase  (1)
+finish-move d1 h1 a4 (1)
+push-search d1 a4 (950000)
+starting-phase  (1)
+launch-search d1 a4 (1)
+reset-drone_at d1 a4 (0)
+ending-phase c9 c0 (1)
+pop-search d1 a4 (1)
+stacking-phase  (1)
+push-move d1 a4 h1 (200000)
+finish-search d1 a4 (1)
+starting-phase  (1)
+launch-move d1 a4 h1 (1)
+reset-drone_at d1 a4 (0)
+reset-searched a4 (0)
+ending-phase c0 c1 (1)
+pop-move d1 a4 h1 (1)
+stacking-phase  (1)
+finish-move d1 a4 h1 (1)
+starting-phase  (1)
+reset-drone_at d1 h1 (0)
+ending-phase c1 c2 (1)
+stacking-phase  (1)
+push-move d1 h1 a2 (223607)
+starting-phase  (1)
+launch-move d1 h1 a2 (1)
+reset-drone_at d1 h1 (0)
+ending-phase c2 c3 (1)
+pop-move d1 h1 a2 (1)
+stacking-phase  (1)
+finish-move d1 h1 a2 (1)
+push-search d1 a2 (950000)
+starting-phase  (1)
+launch-search d1 a2 (1)
+reset-drone_at d1 a2 (0)
+ending-phase c3 c4 (1)
+pop-search d1 a2 (1)
+stacking-phase  (1)
+finish-search d1 a2 (1)
+push-move d1 a2 a0 (100000)
+starting-phase  (1)
+launch-move d1 a2 a0 (1)
+reset-drone_at d1 a2 (0)
+reset-searched a2 (0)
+ending-phase c4 c5 (1)
+pop-move d1 a2 a0 (1)
+stacking-phase  (1)
+finish-move d1 a2 a0 (1)
+push-search d1 a0 (950000)
+starting-phase  (1)
+launch-search d1 a0 (1)
+reset-drone_at d1 a0 (0)
+ending-phase c5 c6 (1)
+pop-search d1 a0 (1)
+stacking-phase  (1)
+finish-search d1 a0 (1)
+push-move d1 a0 a1 (100000)
+starting-phase  (1)
+launch-move d1 a0 a1 (1)
+reset-drone_at d1 a0 (0)
+reset-searched a0 (0)
+ending-phase c6 c7 (1)
+pop-move d1 a0 a1 (1)
+stacking-phase  (1)
+finish-move d1 a0 a1 (1)
+push-search d1 a1 (950000)
+starting-phase  (1)
+launch-search d1 a1 (1)
+reset-drone_at d1 a1 (0)
+ending-phase c7 c8 (1)
+pop-search d1 a1 (1)
+stacking-phase  (1)
+finish-search d1 a1 (1)
+starting-phase  (1)
+reset-searched a1 (0)
+ending-phase c8 c9 (1)
+stacking-phase  (1)
+push-move d1 a1 a0 (100000)
+starting-phase  (1)
+reset-drone_at d1 a1 (0)
+launch-move d1 a1 a0 (1)
+ending-phase c9 c0 (1)
+pop-move d1 a1 a0 (1)
+stacking-phase  (1)
+finish-move d1 a1 a0 (1)
+starting-phase  (1)
+reset-drone_at d1 a0 (0)
+ending-phase c0 c1 (1)
+stacking-phase  (1)
+push-move d1 a0 a2 (100000)
+starting-phase  (1)
+launch-move d1 a0 a2 (1)
+reset-drone_at d1 a0 (0)
+ending-phase c1 c2 (1)
+pop-move d1 a0 a2 (1)
+stacking-phase  (1)
+finish-move d1 a0 a2 (1)
+starting-phase  (1)
+reset-drone_at d1 a2 (0)
+ending-phase c2 c3 (1)
+stacking-phase  (1)
+push-move d1 a2 a3 (100000)
+starting-phase  (1)
+launch-move d1 a2 a3 (1)
+reset-drone_at d1 a2 (0)
+ending-phase c3 c4 (1)
+pop-move d1 a2 a3 (1)
+stacking-phase  (1)
+finish-move d1 a2 a3 (1)
+push-search d1 a3 (950000)
+starting-phase  (1)
+launch-search d1 a3 (1)
+reset-drone_at d1 a3 (0)
+ending-phase c4 c5 (1)
+pop-search d1 a3 (1)
+stacking-phase  (1)
+push-move d1 a3 a2 (100000)
+finish-search d1 a3 (1)
+starting-phase  (1)
+launch-move d1 a3 a2 (1)
+reset-drone_at d1 a3 (0)
+reset-searched a3 (0)
+ending-phase c5 c6 (1)
+pop-move d1 a3 a2 (1)
+stacking-phase  (1)
+finish-move d1 a3 a2 (1)
+starting-phase  (1)
+reset-drone_at d1 a2 (0)
+ending-phase c6 c7 (1)
+stacking-phase  (1)
+push-move d1 a2 h1 (141421)
+starting-phase  (1)
+launch-move d1 a2 h1 (1)
+reset-drone_at d1 a2 (0)
+ending-phase c7 c8 (1)
+pop-move d1 a2 h1 (1)
+stacking-phase  (1)
+push-land d1 h1 (300000)
+finish-move d1 a2 h1 (1)
+starting-phase  (1)
+launch-land d1 h1 (1)
+reset-drone_at d1 h1 (0)
+reset-searched h1 (0)
+ending-phase c8 c9 (1)
+pop-land d1 h1 (1)
+stacking-phase  (1)
+finish-land d1 h1 (1)
+starting-phase  (1)
+Plan length: 352 step(s).
+Plan cost: 13215283
+Expanded 1219033 state(s).
+Reopened 0 state(s).
+Evaluated 3083893 state(s).
+Evaluations: 6167786
+Generated 28357702 state(s).
+Dead ends: 1864859 state(s).
+Number of registered states: 3083893
+Best solution cost so far: 13215283
+Solution found - keep searching
+Starting search: tp_lazy_greedy(list(hff2, hlm2), preferred = list(hff2, hlm2), reopen_closed = false)
+Conducting TP lazy best first search, (real) bound = 13215283
+New best heuristic value for <missing>: 8250113
+New best heuristic value for <missing>: 8723737
+[g=0, 1 evaluated, 0 expanded, t=488.347s, 2808584 KB]
+Initial heuristic value for <missing>: 8250113
+Initial heuristic value for <missing>: 8723737
+New best heuristic value for <missing>: 8250112
+[g=1, 2 evaluated, 1 expanded, t=488.347s, 2808584 KB]
+New best heuristic value for <missing>: 8200112
+[g=50002, 7 evaluated, 3 expanded, t=488.347s, 2808584 KB]
+New best heuristic value for <missing>: 8673737
+[g=50002, 9 evaluated, 4 expanded, t=488.347s, 2808584 KB]
+New best heuristic value for <missing>: 8623737
+[g=100002, 14 evaluated, 5 expanded, t=488.347s, 2808584 KB]
+New best heuristic value for <missing>: 7250111
+New best heuristic value for <missing>: 7823743
+[g=1000002, 16 evaluated, 6 expanded, t=488.347s, 2808584 KB]
+New best heuristic value for <missing>: 6300111
+New best heuristic value for <missing>: 6873742
+[g=1950002, 21 evaluated, 8 expanded, t=488.351s, 2808584 KB]
+New best heuristic value for <missing>: 6873741
+[g=1950003, 24 evaluated, 10 expanded, t=488.351s, 2808584 KB]
+New best heuristic value for <missing>: 6850142
+[g=1950002, 56 evaluated, 29 expanded, t=488.359s, 2808584 KB]
+New best heuristic value for <missing>: 6750134
+[g=1950003, 59 evaluated, 31 expanded, t=488.359s, 2808584 KB]
+New best heuristic value for <missing>: 6300108
+New best heuristic value for <missing>: 6641553
+[g=2223616, 976 evaluated, 606 expanded, t=488.543s, 2809508 KB]
+New best heuristic value for <missing>: 6300107
+[g=2223617, 977 evaluated, 607 expanded, t=488.543s, 2809508 KB]
+New best heuristic value for <missing>: 6541546
+[g=2223616, 1136 evaluated, 762 expanded, t=488.583s, 2809772 KB]
+New best heuristic value for <missing>: 6200107
+[g=2200009, 1942 evaluated, 1496 expanded, t=488.779s, 2810704 KB]
+New best heuristic value for <missing>: 6200106
+[g=2200010, 1943 evaluated, 1497 expanded, t=488.779s, 2810704 KB]
+New best heuristic value for <missing>: 6200104
+[g=3273630, 49227 evaluated, 20988 expanded, t=496.871s, 2846144 KB]
+New best heuristic value for <missing>: 6200099
+[g=3573636, 49661 evaluated, 21164 expanded, t=496.943s, 2846412 KB]
+New best heuristic value for <missing>: 6200098
+[g=3573638, 49665 evaluated, 21167 expanded, t=496.943s, 2846412 KB]
+New best heuristic value for <missing>: 6200093
+[g=3873643, 50133 evaluated, 21522 expanded, t=497.047s, 2847336 KB]
+New best heuristic value for <missing>: 6200092
+[g=3573643, 50179 evaluated, 21539 expanded, t=497.055s, 2847468 KB]
+New best heuristic value for <missing>: 5250092
+[g=4523643, 50185 evaluated, 21543 expanded, t=497.059s, 2847468 KB]
+New best heuristic value for <missing>: 6291568
+[g=4523643, 50191 evaluated, 21546 expanded, t=497.059s, 2847468 KB]
+New best heuristic value for <missing>: 6291567
+[g=4523644, 50194 evaluated, 21548 expanded, t=497.059s, 2847468 KB]
+New best heuristic value for <missing>: 6191561
+[g=4523643, 50233 evaluated, 21567 expanded, t=497.067s, 2847468 KB]
+New best heuristic value for <missing>: 6191560
+[g=4523644, 50236 evaluated, 21569 expanded, t=497.067s, 2847468 KB]
+New best heuristic value for <missing>: 5150090
+[g=4623648, 50286 evaluated, 21591 expanded, t=497.075s, 2847600 KB]
+New best heuristic value for <missing>: 6141551
+[g=4523649, 50389 evaluated, 21613 expanded, t=497.087s, 2847600 KB]
+New best heuristic value for <missing>: 5150083
+[g=4623654, 50428 evaluated, 21632 expanded, t=497.095s, 2847732 KB]
+New best heuristic value for <missing>: 4200083
+[g=5573654, 50436 evaluated, 21638 expanded, t=497.099s, 2847732 KB]
+New best heuristic value for <missing>: 6041572
+[g=4923654, 50616 evaluated, 21741 expanded, t=497.131s, 2848128 KB]
+New best heuristic value for <missing>: 6041571
+[g=4923655, 50621 evaluated, 21744 expanded, t=497.131s, 2848128 KB]
+New best heuristic value for <missing>: 5391571
+[g=5573654, 50623 evaluated, 21745 expanded, t=497.135s, 2848128 KB]
+New best heuristic value for <missing>: 5391570
+[g=5573655, 50626 evaluated, 21747 expanded, t=497.135s, 2848128 KB]
+New best heuristic value for <missing>: 5391569
+[g=5573655, 50629 evaluated, 21749 expanded, t=497.135s, 2848128 KB]
+New best heuristic value for <missing>: 5291564
+[g=5573654, 50673 evaluated, 21773 expanded, t=497.143s, 2848128 KB]
+New best heuristic value for <missing>: 5291563
+[g=5573655, 50676 evaluated, 21775 expanded, t=497.143s, 2848128 KB]
+New best heuristic value for <missing>: 5291562
+[g=5573655, 50679 evaluated, 21777 expanded, t=497.143s, 2848128 KB]
+New best heuristic value for <missing>: 5141550
+[g=5573654, 51467 evaluated, 22255 expanded, t=497.299s, 2849580 KB]
+New best heuristic value for <missing>: 5141549
+[g=5573655, 51470 evaluated, 22257 expanded, t=497.299s, 2849580 KB]
+New best heuristic value for <missing>: 5141548
+[g=5573655, 51473 evaluated, 22259 expanded, t=497.299s, 2849580 KB]
+New best heuristic value for <missing>: 4200077
+New best heuristic value for <missing>: 5091564
+[g=5873660, 51785 evaluated, 22468 expanded, t=497.363s, 2850244 KB]
+New best heuristic value for <missing>: 5091563
+[g=5873661, 51788 evaluated, 22470 expanded, t=497.367s, 2850244 KB]
+New best heuristic value for <missing>: 5091562
+[g=5873661, 51791 evaluated, 22472 expanded, t=497.367s, 2850244 KB]
+New best heuristic value for <missing>: 4991557
+[g=5873660, 51932 evaluated, 22534 expanded, t=497.391s, 2850508 KB]
+New best heuristic value for <missing>: 4991556
+[g=5873661, 51935 evaluated, 22536 expanded, t=497.391s, 2850508 KB]
+New best heuristic value for <missing>: 4991555
+[g=5873661, 51938 evaluated, 22538 expanded, t=497.391s, 2850508 KB]
+New best heuristic value for <missing>: 4200076
+[g=5573660, 52296 evaluated, 22698 expanded, t=497.459s, 2851036 KB]
+New best heuristic value for <missing>: 3250076
+New best heuristic value for <missing>: 4441563
+[g=6523660, 52563 evaluated, 22819 expanded, t=497.507s, 2851432 KB]
+New best heuristic value for <missing>: 4441562
+[g=6523661, 52566 evaluated, 22821 expanded, t=497.507s, 2851432 KB]
+New best heuristic value for <missing>: 4341556
+[g=6523660, 52606 evaluated, 22840 expanded, t=497.515s, 2851432 KB]
+New best heuristic value for <missing>: 4341555
+[g=6523661, 52609 evaluated, 22842 expanded, t=497.515s, 2851432 KB]
+New best heuristic value for <missing>: 4191542
+[g=6523660, 53140 evaluated, 23130 expanded, t=497.615s, 2852356 KB]
+New best heuristic value for <missing>: 4191541
+[g=6523661, 53143 evaluated, 23132 expanded, t=497.619s, 2852356 KB]
+New best heuristic value for <missing>: 3150064
+[g=6673675, 53439 evaluated, 23325 expanded, t=497.675s, 2853016 KB]
+New best heuristic value for <missing>: 2200064
+New best heuristic value for <missing>: 3841564
+[g=7623675, 53455 evaluated, 23332 expanded, t=497.679s, 2853016 KB]
+New best heuristic value for <missing>: 3841563
+[g=7623676, 53458 evaluated, 23334 expanded, t=497.679s, 2853016 KB]
+New best heuristic value for <missing>: 3841562
+[g=7623676, 53461 evaluated, 23336 expanded, t=497.679s, 2853016 KB]
+New best heuristic value for <missing>: 3741557
+[g=7623675, 53507 evaluated, 23356 expanded, t=497.691s, 2853148 KB]
+New best heuristic value for <missing>: 3741556
+[g=7623676, 53510 evaluated, 23358 expanded, t=497.691s, 2853148 KB]
+New best heuristic value for <missing>: 3741555
+[g=7623676, 53513 evaluated, 23360 expanded, t=497.691s, 2853148 KB]
+New best heuristic value for <missing>: 3641550
+[g=7623675, 54766 evaluated, 24020 expanded, t=497.931s, 2855664 KB]
+New best heuristic value for <missing>: 3641549
+[g=7623676, 54769 evaluated, 24022 expanded, t=497.931s, 2855664 KB]
+New best heuristic value for <missing>: 3641548
+[g=7623676, 54772 evaluated, 24024 expanded, t=497.935s, 2855664 KB]
+New best heuristic value for <missing>: 2100057
+[g=7723681, 57592 evaluated, 25589 expanded, t=498.499s, 2861352 KB]
+New best heuristic value for <missing>: 2100050
+[g=7723687, 58462 evaluated, 26131 expanded, t=498.667s, 2863336 KB]
+New best heuristic value for <missing>: 1150050
+New best heuristic value for <missing>: 2891556
+[g=8673687, 58476 evaluated, 26137 expanded, t=498.671s, 2863468 KB]
+New best heuristic value for <missing>: 2891555
+[g=8673688, 58479 evaluated, 26139 expanded, t=498.671s, 2863468 KB]
+New best heuristic value for <missing>: 2791549
+[g=8673687, 58506 evaluated, 26152 expanded, t=498.675s, 2863468 KB]
+New best heuristic value for <missing>: 2791548
+[g=8673688, 58509 evaluated, 26154 expanded, t=498.675s, 2863468 KB]
+New best heuristic value for <missing>: 1050043
+[g=8773693, 59647 evaluated, 26792 expanded, t=498.895s, 2865984 KB]
+New best heuristic value for <missing>: 1050036
+[g=8773699, 60267 evaluated, 27180 expanded, t=499.015s, 2867572 KB]
+New best heuristic value for <missing>: 100036
+New best heuristic value for <missing>: 1941549
+[g=9723699, 60275 evaluated, 27184 expanded, t=499.019s, 2867572 KB]
+New best heuristic value for <missing>: 1941548
+[g=9723700, 60278 evaluated, 27186 expanded, t=499.019s, 2867572 KB]
+New best heuristic value for <missing>: 100029
+[g=9723705, 60861 evaluated, 27524 expanded, t=499.131s, 2869156 KB]
+New best heuristic value for <missing>: 1841543
+[g=9823705, 60863 evaluated, 27525 expanded, t=499.131s, 2869156 KB]
+New best heuristic value for <missing>: 1841542
+[g=9823706, 60868 evaluated, 27528 expanded, t=499.131s, 2869156 KB]
+New best heuristic value for <missing>: 1841541
+[g=9823706, 60872 evaluated, 27530 expanded, t=499.135s, 2869156 KB]
+New best heuristic value for <missing>: 1741537
+[g=9923713, 63316 evaluated, 29092 expanded, t=499.647s, 2874840 KB]
+New best heuristic value for <missing>: 1741536
+[g=9923714, 63317 evaluated, 29093 expanded, t=499.647s, 2874840 KB]
+New best heuristic value for <missing>: 1741535
+[g=9923715, 63323 evaluated, 29097 expanded, t=499.651s, 2874840 KB]
+New best heuristic value for <missing>: 1741534
+[g=9923715, 63326 evaluated, 29098 expanded, t=499.651s, 2874840 KB]
+New best heuristic value for <missing>: 1641529
+[g=10773713, 66648 evaluated, 31110 expanded, t=500.307s, 2878956 KB]
+New best heuristic value for <missing>: 1641528
+[g=10773714, 66649 evaluated, 31111 expanded, t=500.307s, 2878956 KB]
+New best heuristic value for <missing>: 1641527
+[g=10773715, 66653 evaluated, 31114 expanded, t=500.307s, 2878956 KB]
+New best heuristic value for <missing>: 1241503
+[g=10973724, 73493 evaluated, 35322 expanded, t=501.666s, 2890348 KB]
+New best heuristic value for <missing>: 1241502
+[g=10973725, 73494 evaluated, 35323 expanded, t=501.666s, 2890348 KB]
+New best heuristic value for <missing>: 1241501
+[g=10973726, 73495 evaluated, 35324 expanded, t=501.666s, 2890348 KB]
+New best heuristic value for <missing>: 1241500
+[g=10973727, 73500 evaluated, 35327 expanded, t=501.666s, 2890348 KB]
+New best heuristic value for <missing>: 1241499
+[g=10973727, 73503 evaluated, 35328 expanded, t=501.670s, 2890348 KB]
+New best heuristic value for <missing>: 100027
+[g=10223737, 75980 evaluated, 36927 expanded, t=502.174s, 2893784 KB]
+New best heuristic value for <missing>: 20
+[g=10323744, 76131 evaluated, 37019 expanded, t=502.202s, 2894052 KB]
+New best heuristic value for <missing>: 1200088
+[g=10623744, 76132 evaluated, 37020 expanded, t=502.202s, 2894052 KB]
+New best heuristic value for <missing>: 1200087
+[g=10623745, 76137 evaluated, 37024 expanded, t=502.206s, 2894052 KB]
+New best heuristic value for <missing>: 1200086
+[g=10623745, 76140 evaluated, 37026 expanded, t=502.206s, 2894052 KB]
+New best heuristic value for <missing>: 1200085
+[g=10623745, 76144 evaluated, 37029 expanded, t=502.206s, 2894052 KB]
+New best heuristic value for <missing>: 19
+[g=10423746, 76164 evaluated, 37040 expanded, t=502.210s, 2894052 KB]
+New best heuristic value for <missing>: 14
+[g=10323750, 76387 evaluated, 37190 expanded, t=502.250s, 2894448 KB]
+New best heuristic value for <missing>: 1200081
+[g=10623750, 76388 evaluated, 37191 expanded, t=502.250s, 2894448 KB]
+New best heuristic value for <missing>: 900080
+[g=10923750, 76389 evaluated, 37192 expanded, t=502.250s, 2894448 KB]
+New best heuristic value for <missing>: 900079
+[g=10923751, 76395 evaluated, 37197 expanded, t=502.254s, 2894448 KB]
+New best heuristic value for <missing>: 900078
+[g=10923751, 76398 evaluated, 37199 expanded, t=502.254s, 2894448 KB]
+New best heuristic value for <missing>: 13
+[g=10723752, 76407 evaluated, 37206 expanded, t=502.254s, 2894448 KB]
+New best heuristic value for <missing>: 12
+[g=10323753, 76430 evaluated, 37221 expanded, t=502.258s, 2894580 KB]
+New best heuristic value for <missing>: 9
+[g=10323754, 76432 evaluated, 37223 expanded, t=502.262s, 2894580 KB]
+New best heuristic value for <missing>: 7
+[g=10323755, 76433 evaluated, 37224 expanded, t=502.262s, 2894580 KB]
+New best heuristic value for <missing>: 5
+[g=10323756, 76441 evaluated, 37232 expanded, t=502.262s, 2894580 KB]
+New best heuristic value for <missing>: 4
+[g=10323757, 76449 evaluated, 37240 expanded, t=502.262s, 2894580 KB]
+New best heuristic value for <missing>: 841502
+[g=11023756, 76465 evaluated, 37256 expanded, t=502.266s, 2894580 KB]
+New best heuristic value for <missing>: 841501
+[g=11023757, 76469 evaluated, 37259 expanded, t=502.270s, 2894580 KB]
+New best heuristic value for <missing>: 841500
+[g=11023757, 76472 evaluated, 37261 expanded, t=502.270s, 2894580 KB]
+New best heuristic value for <missing>: 841499
+[g=11023757, 76475 evaluated, 37263 expanded, t=502.270s, 2894580 KB]
+New best heuristic value for <missing>: 800074
+[g=11023756, 76504 evaluated, 37278 expanded, t=502.274s, 2894580 KB]
+New best heuristic value for <missing>: 800073
+[g=11023757, 76508 evaluated, 37281 expanded, t=502.274s, 2894716 KB]
+New best heuristic value for <missing>: 800072
+[g=11023757, 76511 evaluated, 37283 expanded, t=502.274s, 2894716 KB]
+New best heuristic value for <missing>: 800071
+[g=11023757, 76514 evaluated, 37285 expanded, t=502.274s, 2894716 KB]
+New best heuristic value for <missing>: 741496
+[g=11123761, 77423 evaluated, 37924 expanded, t=502.450s, 2896168 KB]
+New best heuristic value for <missing>: 741495
+[g=11123762, 77425 evaluated, 37926 expanded, t=502.450s, 2896168 KB]
+New best heuristic value for <missing>: 741494
+[g=11123763, 77431 evaluated, 37931 expanded, t=502.450s, 2896300 KB]
+New best heuristic value for <missing>: 741493
+[g=11123763, 77434 evaluated, 37933 expanded, t=502.450s, 2896300 KB]
+New best heuristic value for <missing>: 741492
+[g=11123763, 77437 evaluated, 37935 expanded, t=502.450s, 2896300 KB]
+New best heuristic value for <missing>: 3
+[g=10523763, 77969 evaluated, 38304 expanded, t=502.550s, 2897104 KB]
+New best heuristic value for <missing>: 700031
+[g=11473765, 77978 evaluated, 38313 expanded, t=502.550s, 2897104 KB]
+New best heuristic value for <missing>: 400031
+[g=11773765, 77979 evaluated, 38314 expanded, t=502.554s, 2897104 KB]
+New best heuristic value for <missing>: 300031
+[g=11873765, 77981 evaluated, 38316 expanded, t=502.554s, 2897104 KB]
+New best heuristic value for <missing>: 300029
+[g=11873767, 77984 evaluated, 38319 expanded, t=502.554s, 2897104 KB]
+New best heuristic value for <missing>: 300028
+[g=11873767, 77987 evaluated, 38321 expanded, t=502.554s, 2897104 KB]
+New best heuristic value for <missing>: 300027
+[g=11873767, 77991 evaluated, 38324 expanded, t=502.554s, 2897104 KB]
+New best heuristic value for <missing>: 300024
+[g=11873771, 78062 evaluated, 38377 expanded, t=502.566s, 2897236 KB]
+New best heuristic value for <missing>: 300023
+[g=11873772, 78063 evaluated, 38378 expanded, t=502.566s, 2897236 KB]
+New best heuristic value for <missing>: 300021
+[g=11873774, 78066 evaluated, 38381 expanded, t=502.566s, 2897236 KB]
+New best heuristic value for <missing>: 300020
+[g=11873774, 78067 evaluated, 38382 expanded, t=502.566s, 2897236 KB]
+New best heuristic value for <missing>: 300019
+[g=11873774, 78069 evaluated, 38384 expanded, t=502.570s, 2897236 KB]
+New best heuristic value for <missing>: 300017
+[g=11873776, 78072 evaluated, 38387 expanded, t=502.570s, 2897236 KB]
+New best heuristic value for <missing>: 300016
+[g=11873778, 78075 evaluated, 38390 expanded, t=502.570s, 2897236 KB]
+New best heuristic value for <missing>: 2
+[g=11873779, 78076 evaluated, 38391 expanded, t=502.570s, 2897236 KB]
+New best heuristic value for <missing>: 300015
+[g=11873779, 78077 evaluated, 38392 expanded, t=502.570s, 2897236 KB]
+New best heuristic value for <missing>: 300013
+[g=11873781, 78079 evaluated, 38394 expanded, t=502.570s, 2897236 KB]
+New best heuristic value for <missing>: 300012
+[g=11873783, 78081 evaluated, 38396 expanded, t=502.570s, 2897236 KB]
+New best heuristic value for <missing>: 1
+[g=11873784, 78082 evaluated, 38397 expanded, t=502.570s, 2897236 KB]
+New best heuristic value for <missing>: 300011
+[g=11873784, 78083 evaluated, 38398 expanded, t=502.570s, 2897236 KB]
+New best heuristic value for <missing>: 11
+[g=12173786, 78087 evaluated, 38402 expanded, t=502.570s, 2897236 KB]
+New best heuristic value for <missing>: 9
+[g=12173788, 78090 evaluated, 38405 expanded, t=502.575s, 2897236 KB]
+New best heuristic value for <missing>: 8
+[g=12173788, 78091 evaluated, 38406 expanded, t=502.575s, 2897236 KB]
+New best heuristic value for <missing>: 6
+[g=12173790, 78094 evaluated, 38409 expanded, t=502.575s, 2897236 KB]
+New best heuristic value for <missing>: 4
+[g=12173791, 78095 evaluated, 38410 expanded, t=502.575s, 2897236 KB]
+New best heuristic value for <missing>: 2
+[g=12173792, 78096 evaluated, 38411 expanded, t=502.575s, 2897236 KB]
+Solution found!
+Actual search time: 14.400s [t=502.575s]
+0.000: ( takeoff d0 elz1 ) [5.0000]
+0.000: ( takeoff d1 h1 ) [5.0000]
+5.000: ( move d1 h1 a2 ) [22.3617]
+5.000: ( search d0 elz1 ) [95.0000]
+27.361: ( search d1 a2 ) [95.0000]
+122.361: ( land d0 elz1 ) [30.0000]
+122.361: ( move d1 a2 a0 ) [10.0000]
+132.361: ( search d1 a0 ) [95.0000]
+227.361: ( move d1 a0 a1 ) [10.0000]
+237.361: ( search d1 a1 ) [95.0000]
+317.361: ( takeoff d0 elz1 ) [5.0000]
+322.361: ( move d0 elz1 a7 ) [10.0000]
+332.361: ( search d0 a7 ) [95.0000]
+427.361: ( move d0 a7 a6 ) [10.0000]
+437.361: ( search d0 a6 ) [95.0000]
+532.361: ( move d0 a6 a5 ) [10.0000]
+542.361: ( search d0 a5 ) [95.0000]
+637.363: ( move d1 a1 a0 ) [10.0000]
+647.365: ( move d0 a5 a6 ) [10.0000]
+647.365: ( move d1 a0 h0 ) [10.0000]
+657.367: ( move d1 h0 a3 ) [10.0000]
+657.367: ( move d0 a6 a7 ) [10.0000]
+667.367: ( search d1 a3 ) [95.0000]
+762.367: ( move d1 a3 a4 ) [10.0000]
+772.367: ( search d1 a4 ) [95.0000]
+867.367: ( move d1 a4 h1 ) [20.0000]
+887.369: ( search d1 h1 ) [95.0000]
+887.369: ( move d0 a7 elz1 ) [10.0000]
+897.369: ( land d0 elz1 ) [30.0000]
+982.371: ( land d1 h1 ) [30.0000]
+ending-phase c0 c1 (1)
+stacking-phase  (1)
+push-takeoff d0 elz1 (50000)
+push-takeoff d1 h1 (50000)
+starting-phase  (1)
+launch-takeoff d0 elz1 (1)
+launch-takeoff d1 h1 (1)
+reset-landed d0 (0)
+reset-landed d1 (0)
+ending-phase c1 c2 (1)
+pop-takeoff d0 elz1 (1)
+pop-takeoff d1 h1 (1)
+stacking-phase  (1)
+push-move d1 h1 a2 (223607)
+finish-takeoff d0 elz1 (1)
+push-search d0 elz1 (950000)
+finish-takeoff d1 h1 (1)
+starting-phase  (1)
+launch-search d0 elz1 (1)
+launch-move d1 h1 a2 (1)
+reset-drone_at d1 h1 (0)
+reset-landed d0 (0)
+reset-landed d1 (0)
+ending-phase c2 c3 (1)
+pop-move d1 h1 a2 (1)
+stacking-phase  (1)
+finish-move d1 h1 a2 (1)
+push-search d1 a2 (950000)
+starting-phase  (1)
+launch-search d1 a2 (1)
+reset-drone_at d1 a2 (0)
+ending-phase c3 c4 (1)
+pop-search d0 elz1 (1)
+stacking-phase  (1)
+finish-search d0 elz1 (1)
+starting-phase  (1)
+reset-searched elz1 (0)
+ending-phase c4 c5 (1)
+pop-search d1 a2 (1)
+stacking-phase  (1)
+push-land d0 elz1 (300000)
+push-move d1 a2 a0 (100000)
+finish-search d1 a2 (1)
+starting-phase  (1)
+launch-move d1 a2 a0 (1)
+launch-land d0 elz1 (1)
+reset-drone_at d1 a2 (0)
+reset-searched a2 (0)
+reset-searched elz1 (0)
+ending-phase c5 c6 (1)
+pop-move d1 a2 a0 (1)
+stacking-phase  (1)
+finish-move d1 a2 a0 (1)
+push-search d1 a0 (950000)
+starting-phase  (1)
+launch-search d1 a0 (1)
+reset-drone_at d1 a0 (0)
+ending-phase c6 c7 (1)
+pop-land d0 elz1 (1)
+stacking-phase  (1)
+finish-land d0 elz1 (1)
+starting-phase  (1)
+reset-landed d0 (0)
+ending-phase c7 c8 (1)
+pop-search d1 a0 (1)
+stacking-phase  (1)
+push-move d1 a0 a1 (100000)
+finish-search d1 a0 (1)
+starting-phase  (1)
+launch-move d1 a0 a1 (1)
+reset-drone_at d1 a0 (0)
+reset-searched a0 (0)
+ending-phase c8 c9 (1)
+pop-move d1 a0 a1 (1)
+stacking-phase  (1)
+finish-move d1 a0 a1 (1)
+push-search d1 a1 (950000)
+push-takeoff d0 elz1 (50000)
+starting-phase  (1)
+launch-takeoff d0 elz1 (1)
+launch-search d1 a1 (1)
+reset-drone_at d1 a1 (0)
+reset-landed d0 (0)
+ending-phase c9 c0 (1)
+pop-takeoff d0 elz1 (1)
+stacking-phase  (1)
+push-move d0 elz1 a7 (100000)
+finish-takeoff d0 elz1 (1)
+starting-phase  (1)
+launch-move d0 elz1 a7 (1)
+reset-drone_at d0 elz1 (0)
+reset-landed d0 (0)
+ending-phase c0 c1 (1)
+pop-move d0 elz1 a7 (1)
+pop-search d1 a1 (1)
+stacking-phase  (1)
+finish-search d1 a1 (1)
+finish-move d0 elz1 a7 (1)
+push-search d0 a7 (950000)
+starting-phase  (1)
+launch-search d0 a7 (1)
+reset-drone_at d0 a7 (0)
+reset-searched a1 (0)
+ending-phase c1 c2 (1)
+pop-search d0 a7 (1)
+stacking-phase  (1)
+finish-search d0 a7 (1)
+push-move d0 a7 a6 (100000)
+starting-phase  (1)
+launch-move d0 a7 a6 (1)
+reset-drone_at d0 a7 (0)
+reset-searched a7 (0)
+ending-phase c2 c3 (1)
+pop-move d0 a7 a6 (1)
+stacking-phase  (1)
+finish-move d0 a7 a6 (1)
+push-search d0 a6 (950000)
+starting-phase  (1)
+launch-search d0 a6 (1)
+reset-drone_at d0 a6 (0)
+ending-phase c3 c4 (1)
+pop-search d0 a6 (1)
+stacking-phase  (1)
+push-move d0 a6 a5 (100000)
+finish-search d0 a6 (1)
+starting-phase  (1)
+launch-move d0 a6 a5 (1)
+reset-drone_at d0 a6 (0)
+reset-searched a6 (0)
+ending-phase c4 c5 (1)
+pop-move d0 a6 a5 (1)
+stacking-phase  (1)
+finish-move d0 a6 a5 (1)
+push-search d0 a5 (950000)
+starting-phase  (1)
+launch-search d0 a5 (1)
+reset-drone_at d0 a5 (0)
+ending-phase c5 c6 (1)
+pop-search d0 a5 (1)
+stacking-phase  (1)
+finish-search d0 a5 (1)
+starting-phase  (1)
+reset-searched a5 (0)
+ending-phase c6 c7 (1)
+stacking-phase  (1)
+push-move d1 a1 a0 (100000)
+starting-phase  (1)
+launch-move d1 a1 a0 (1)
+reset-drone_at d1 a1 (0)
+ending-phase c7 c8 (1)
+pop-move d1 a1 a0 (1)
+stacking-phase  (1)
+finish-move d1 a1 a0 (1)
+starting-phase  (1)
+reset-drone_at d1 a0 (0)
+ending-phase c8 c9 (1)
+stacking-phase  (1)
+push-move d0 a5 a6 (100000)
+push-move d1 a0 h0 (100000)
+starting-phase  (1)
+launch-move d1 a0 h0 (1)
+launch-move d0 a5 a6 (1)
+reset-drone_at d0 a5 (0)
+reset-drone_at d1 a0 (0)
+ending-phase c9 c0 (1)
+pop-move d1 a0 h0 (1)
+pop-move d0 a5 a6 (1)
+stacking-phase  (1)
+finish-move d1 a0 h0 (1)
+finish-move d0 a5 a6 (1)
+starting-phase  (1)
+reset-drone_at d0 a6 (0)
+reset-drone_at d1 h0 (0)
+ending-phase c0 c1 (1)
+stacking-phase  (1)
+push-move d1 h0 a3 (100000)
+push-move d0 a6 a7 (100000)
+starting-phase  (1)
+launch-move d1 h0 a3 (1)
+launch-move d0 a6 a7 (1)
+reset-drone_at d0 a6 (0)
+reset-drone_at d1 h0 (0)
+ending-phase c1 c2 (1)
+pop-move d1 h0 a3 (1)
+pop-move d0 a6 a7 (1)
+stacking-phase  (1)
+finish-move d1 h0 a3 (1)
+push-search d1 a3 (950000)
+finish-move d0 a6 a7 (1)
+starting-phase  (1)
+launch-search d1 a3 (1)
+reset-drone_at d0 a7 (0)
+reset-drone_at d1 a3 (0)
+ending-phase c2 c3 (1)
+pop-search d1 a3 (1)
+stacking-phase  (1)
+push-move d1 a3 a4 (100000)
+finish-search d1 a3 (1)
+starting-phase  (1)
+launch-move d1 a3 a4 (1)
+reset-drone_at d1 a3 (0)
+reset-searched a3 (0)
+ending-phase c3 c4 (1)
+pop-move d1 a3 a4 (1)
+stacking-phase  (1)
+finish-move d1 a3 a4 (1)
+push-search d1 a4 (950000)
+starting-phase  (1)
+launch-search d1 a4 (1)
+reset-drone_at d1 a4 (0)
+ending-phase c4 c5 (1)
+pop-search d1 a4 (1)
+stacking-phase  (1)
+finish-search d1 a4 (1)
+push-move d1 a4 h1 (200000)
+starting-phase  (1)
+launch-move d1 a4 h1 (1)
+reset-drone_at d1 a4 (0)
+reset-searched a4 (0)
+ending-phase c5 c6 (1)
+pop-move d1 a4 h1 (1)
+stacking-phase  (1)
+finish-move d1 a4 h1 (1)
+starting-phase  (1)
+reset-drone_at d1 h1 (0)
+ending-phase c6 c7 (1)
+stacking-phase  (1)
+push-search d1 h1 (950000)
+push-move d0 a7 elz1 (100000)
+starting-phase  (1)
+launch-search d1 h1 (1)
+launch-move d0 a7 elz1 (1)
+reset-drone_at d0 a7 (0)
+ending-phase c7 c8 (1)
+pop-move d0 a7 elz1 (1)
+stacking-phase  (1)
+push-land d0 elz1 (300000)
+finish-move d0 a7 elz1 (1)
+starting-phase  (1)
+launch-land d0 elz1 (1)
+reset-drone_at d0 elz1 (0)
+reset-searched elz1 (0)
+ending-phase c8 c9 (1)
+pop-land d0 elz1 (1)
+stacking-phase  (1)
+finish-land d0 elz1 (1)
+starting-phase  (1)
+reset-landed d0 (0)
+ending-phase c9 c0 (1)
+pop-search d1 h1 (1)
+stacking-phase  (1)
+finish-search d1 h1 (1)
+starting-phase  (1)
+reset-searched h1 (0)
+ending-phase c0 c1 (1)
+stacking-phase  (1)
+push-land d1 h1 (300000)
+starting-phase  (1)
+launch-land d1 h1 (1)
+reset-searched h1 (0)
+ending-phase c1 c2 (1)
+pop-land d1 h1 (1)
+stacking-phase  (1)
+finish-land d1 h1 (1)
+starting-phase  (1)
+Plan length: 265 step(s).
+Plan cost: 12173793
+Expanded 38412 state(s).
+Reopened 0 state(s).
+Evaluated 78097 state(s).
+Evaluations: 156194
+Generated 1347968 state(s).
+Dead ends: 39684 state(s).
+Number of registered states: 3130045
+Best solution cost so far: 12173793
+Solution found - keep searching
+Actual search time: 502.464s [t=502.575s]
+Cumulative statistics:
+Expanded 1257445 state(s).
+Reopened 0 state(s).
+Evaluated 3161990 state(s).
+Evaluations: 6323980
+Generated 29705670 state(s).
+Dead ends: 0 state(s).
+Search time: 502.464s
+Total time: 502.575s
+Solution found.
+Peak memory: 2897368 KB
+Validating plan: /home/msccomputer/catkin_ws/src/temporal-planning/VAL/bin/Validate -v -t 0.001 tdom.pddl tins.pddl tmp_sas_plan.2 > plan.validation

@@ -15,17 +15,17 @@
         
         (can_land h0)
         (can_land h1)
-        (can_land elz0)
+        ; (can_land elz0)
         (can_land elz1)
 
         (can_recharge h0)
         (can_recharge h1)
-        (can_recharge elz0)
+        ; (can_recharge elz0)
         (can_recharge elz1)
 
         (can_resupply h0)
         (can_resupply h1)
-        (can_resupply elz0)
+        ; (can_resupply elz0)
         (can_resupply elz1)
     
         ; MAP ;;;;;;;;;;;;;;;;;;;;;
@@ -58,8 +58,8 @@
         (path a4 h1)
 
         ; emergency landing zones
-        (path a1 elz0)
-        (path elz0 a1)
+        ; (path a1 elz0)
+        ; (path elz0 a1)
         (path a7 elz1)
         (path elz1 a7)
 

@@ -2,7 +2,7 @@ import re
 import matplotlib.pyplot as plt
 
 # filename = "/home/msccomputer/catkin_ws/src/temporal-planning/tmp_sas_plan.2"
-filename = "3_detection_1drone/tmp_sas_plan.2"
+filename = "4b_simple_search_2drones/tmp_sas_plan.2"
 
 actions = []
 with open(filename, "r") as file:

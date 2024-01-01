@@ -20,17 +20,17 @@
         
         (can_land h0)
         (can_land h1)
-        (can_land elz0)
+        ; (can_land elz0) ; remove for 4c to go fast
         (can_land elz1)
 
         (can_recharge h0)
         (can_recharge h1)
-        (can_recharge elz0)
+        ; (can_recharge elz0) ; remove for 4c to go fast
         (can_recharge elz1)
 
         (can_resupply h0)
         (can_resupply h1)
-        (can_resupply elz0)
+        ; (can_resupply elz0) ; remove for 4c to go fast
         (can_resupply elz1)
     
         ; MAP ;;;;;;;;;;;;;;;;;;;;;
@@ -63,10 +63,8 @@
         (path a4 h1)
 
         ; emergency landing zones
-        (path h1 elz0)
-        (path elz0 h1)
-        (path a1 elz0)
-        (path elz0 a1)
+        ; (path a1 elz0) ; remove for 4c to go fast
+        ; (path elz0 a1) ; remove for 4c to go fast
         (path a7 elz1)
         (path elz1 a7)
 
@@ -118,8 +116,8 @@
         ( = ( distance a7 elz1 ) 20 )
         ( = ( search_distance a7 ) 19 )
 
-        ( = ( distance elz0 a1 ) 20 )
-        ( = ( search_distance elz0 ) 19 )
+        ; ( = ( distance elz0 a1 ) 20 ) ; remove for 4c to go fast
+        ; ( = ( search_distance elz0 ) 19 ) ; remove for 4c to go fast
         
         ( = ( distance elz1 a7 ) 20 )
         ( = ( search_distance elz1 ) 19 )
@@ -147,7 +145,7 @@
             (searched a7)
 
             ; (drone_at d0 h0)
-            (drone_at d0 elz0)
+            (drone_at d0 elz1)
             (landed d0)
 
             (drone_at d1 h1)
@@ -156,3 +154,4 @@
     )
     ; (:metric minimize (total-time))
 )
+ ; remove for 4c to go fast
